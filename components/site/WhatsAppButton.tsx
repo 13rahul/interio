@@ -30,11 +30,11 @@ export function WhatsAppButton() {
       href={site.whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Liwan on WhatsApp"
+      aria-label="Chat with Opulent Living on WhatsApp"
       tabIndex={visible ? undefined : -1}
       aria-hidden={visible ? undefined : true}
       className={cn(
-        "fixed right-5 bottom-5 z-30 grid size-14 place-items-center rounded-full bg-aqua text-ink shadow-lg shadow-black/20 transition-[opacity,transform] duration-500 hover:bg-brass",
+        "fixed right-5 bottom-5 z-30 grid size-14 place-items-center rounded-full bg-brass text-ink shadow-lg shadow-black/20 transition-[opacity,transform] duration-500 hover:bg-brass-light",
         visible ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0",
       )}
     >

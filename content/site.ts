@@ -1,15 +1,17 @@
 // Placeholder contact details until the client confirms them.
 export const site = {
-  name: "Liwan",
+  name: "Opulent Living",
+  legalName: "Opulent Living Design Services",
+  founder: "Jyoti Joshi",
   place: "Dubai",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://liwan.ae",
-  email: "studio@liwan.ae",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://opulentliving.ae",
+  email: "hello@opulentliving.ae",
   phone: "+971 4 000 0000",
   phoneHref: "tel:+97140000000",
   whatsappHref: "https://wa.me/971500000000",
   address: "Dubai Design District, Dubai, United Arab Emirates",
   description:
-    "Liwan is an interior architecture and design studio in Dubai for villas, penthouses, hospitality, and commercial spaces, with turnkey fit-out.",
+    "Opulent Living Design Services is an affordable luxury interior design studio in Dubai for villas, apartments, hospitality, and commercial spaces, with turnkey fit-out.",
 };
 
 export const nav = [
@@ -26,8 +28,8 @@ export const principles = [
     body: "The designer who sketches your first plan walks the site at handover. Nothing is passed to a contractor you have never met.",
   },
   {
-    title: "Our own workshop",
-    body: "Screens, doors, and joinery are made in our workshop, so the finish matches the drawing and the dates hold.",
+    title: "Luxury, honestly priced",
+    body: "A fixed quote with every line itemised. We choose finishes that look and feel expensive, without paying for a label.",
   },
   {
     title: "Climate first",

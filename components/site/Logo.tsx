@@ -9,7 +9,8 @@ export function Logo({
 }) {
   return (
     <span className={cn("inline-flex min-h-11 flex-col items-start justify-center leading-none", className)}>
-      <span className="font-display text-2xl tracking-brand text-beige uppercase">Liwan</span>
+      <span className="font-display text-2xl tracking-brand text-beige uppercase">Opulent</span>
+      <span className="mt-1 pl-0.5 text-[10px] font-medium tracking-[0.62em] text-gold uppercase">Living</span>
       <svg viewBox="0 0 72 12" className="mt-1 h-2 w-20" aria-hidden="true">
         <path d="M2 10 Q36 0 70 10" fill="none" stroke="var(--color-gold)" strokeWidth="1.25" />
       </svg>

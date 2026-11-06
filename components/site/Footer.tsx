@@ -8,10 +8,14 @@ export function Footer() {
     <footer className="theme-stone border-t border-graphite pt-20 pb-10">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div>
-          <Link href="/" aria-label="Liwan, home" className="inline-flex">
+          <Link href="/" aria-label="Opulent Living, home" className="inline-flex">
             <Logo withPlace />
           </Link>
-          <p className="mt-6 max-w-xs text-[15px] leading-relaxed text-ash">{site.address}</p>
+          <p className="mt-6 max-w-xs text-[15px] leading-relaxed text-ash">
+            Founded by {site.founder}.
+            <br />
+            {site.address}
+          </p>
         </div>
         <div>
           <p className="text-xs font-medium tracking-brand text-ash uppercase">Contact</p>
@@ -64,13 +68,13 @@ export function Footer() {
         </nav>
       </div>
       <div className="mx-auto mt-20 max-w-7xl overflow-hidden px-6 lg:px-10" aria-hidden="true">
-        <p className="font-display text-[min(20vw,18rem)] leading-[0.8] font-light tracking-[0.06em] text-graphite uppercase select-none">
-          Liwan
+        <p className="font-display text-[min(15vw,13rem)] leading-[0.8] font-light tracking-[0.04em] text-graphite uppercase select-none">
+          Opulent
         </p>
       </div>
       <div className="mx-auto mt-8 flex max-w-7xl flex-wrap justify-between gap-4 border-t border-graphite px-6 pt-6 text-xs text-ash lg:px-10">
-        <p>© {new Date().getFullYear()} Liwan Interiors. Dubai.</p>
-        <p>Interior architecture · Design · Turnkey fit-out</p>
+        <p>© {new Date().getFullYear()} {site.legalName}. Dubai.</p>
+        <p>Affordable luxury interiors · Design · Turnkey fit-out</p>
       </div>
     </footer>
   );

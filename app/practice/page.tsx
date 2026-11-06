@@ -10,7 +10,7 @@ import { PageHero } from "@/components/site/PageHero";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Interior architecture, design, and turnkey fit-out in Dubai for villas, penthouses, hospitality, and commercial spaces.",
+    "Interior architecture, design, and turnkey fit-out in Dubai for villas, apartments, hospitality, and commercial spaces.",
 };
 
 export default function ServicesPage() {

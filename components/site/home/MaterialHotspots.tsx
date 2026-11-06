@@ -77,7 +77,7 @@ export function MaterialHotspots() {
                     {item.name}
                   </span>
                   <span
-                    className={selected ? "h-px w-10 bg-aqua" : "h-px w-4 bg-graphite"}
+                    className={selected ? "h-px w-10 bg-brass" : "h-px w-4 bg-graphite"}
                     aria-hidden="true"
                   />
                 </button>
@@ -120,7 +120,7 @@ export function MaterialHotspots() {
               >
                 <span className="text-xs font-medium tracking-brand text-beige uppercase">{callout}</span>
                 <span className="grid size-8 place-items-center rounded-full border border-gold text-gold" aria-hidden="true">
-                  <span className="size-1.5 rounded-full bg-aqua" />
+                  <span className="size-1.5 rounded-full bg-brass" />
                 </span>
               </li>
             ))}

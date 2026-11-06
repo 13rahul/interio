@@ -10,7 +10,7 @@ import { PageHero } from "@/components/site/PageHero";
 export const metadata: Metadata = {
   title: "Studio",
   description:
-    "Liwan is an interior architecture and turnkey fit-out studio in Dubai Design District, with its own joinery workshop and site team.",
+    "Opulent Living Design Services, founded by Jyoti Joshi, is an affordable luxury interior design and turnkey fit-out studio in Dubai.",
 };
 
 export default function StudioPage() {
@@ -18,15 +18,15 @@ export default function StudioPage() {
     <>
       <PageHero
         eyebrow="Studio"
-        title="A Dubai studio, from sketch to keys."
-        lede="Liwan is named after the shaded gallery of a Gulf house, the place between the court and the rooms where the heat is held back. Designers, architects, joiners, and site managers work under one roof in d3."
+        title="Luxury living, within reach."
+        lede="Opulent Living Design Services was founded by Jyoti Joshi on a simple belief: a home in Dubai can feel luxurious without a luxury price. Designers, joiners, and site managers work as one team, from the first sketch to the keys."
       />
       <section className="border-b border-graphite py-16 lg:py-24">
         <Container className="grid items-center gap-12 lg:grid-cols-12">
           <div className="relative aspect-[4/3] w-full overflow-hidden lg:col-span-6">
             <Image
               src="/images/story-craft.jpg"
-              alt="A craftsman's hands carving a geometric oak screen with a brass inlay in the Liwan workshop."
+              alt="A craftsman's hands carving a geometric oak screen with a brass inlay in the Opulent Living workshop."
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"

@@ -7,7 +7,7 @@ import { Container } from "@/components/site/Container";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Selected villas, penthouses, and majlis interiors in Dubai by Liwan, designed and delivered turnkey.",
+    "Selected villas, apartments, and majlis interiors in Dubai by Opulent Living, designed and delivered turnkey.",
 };
 
 export default function ProjectsPage() {
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Projects"
         title="Rooms we have finished."
-        lede="A selection of villas, penthouses, and majlis interiors across Dubai, each designed and delivered by the same team. Hospitality and commercial work is shared privately on request."
+        lede="A selection of villas, apartments, and majlis interiors across Dubai, each designed and delivered by the same team. Hospitality and commercial work is shared privately on request."
       />
       <section className="py-20">
         <Container>

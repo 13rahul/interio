@@ -14,7 +14,6 @@
   --color-brass: #d4af37;
   --color-brass-light: #e8cb7a;
   --color-ink: #0b2e27;
-  --color-aqua: #3ec6b4;
 }
 
 @theme inline {
@@ -29,7 +28,7 @@
   --color-graphite: #e3d3b8;
   --color-ash: #3f5a52;
   --color-beige: #0b2e27;
-  --color-gold: #0e6b5f;
+  --color-gold: #17533f;
   color-scheme: light;
 }
 
@@ -42,8 +41,8 @@
 }
 
 .theme-stone {
-  --color-charcoal: #e3f6f1;
-  --color-graphite: #bfe0d6;
+  --color-charcoal: #eadfcb;
+  --color-graphite: #d6c4a5;
 }
 
 .theme-night {

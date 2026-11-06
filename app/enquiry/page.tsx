@@ -10,7 +10,7 @@ import { PageHero } from "@/components/site/PageHero";
 export const metadata: Metadata = {
   title: "Book a consultation",
   description:
-    "Book a private consultation with Liwan for a villa, penthouse, hospitality, commercial, or turnkey fit-out project in Dubai.",
+    "Book a private consultation with Opulent Living for a villa, apartment, hospitality, commercial, or turnkey fit-out project in Dubai.",
 };
 
 type Props = { searchParams: Promise<{ sector?: string }> };

@@ -5,10 +5,10 @@ const tall = { width: 864, height: 1152 };
 const square = { width: 1024, height: 1024 };
 
 export const hero = {
-  eyebrow: "Interior architecture · Dubai",
-  lead: "Quiet",
-  rest: "luxury, composed.",
-  sub: "Villas, penthouses, hotels, and workplaces, designed and delivered turnkey by one studio in Dubai.",
+  eyebrow: "Affordable luxury interiors · Dubai",
+  lead: "Luxury,",
+  rest: "within reach.",
+  sub: "Villas, apartments, hotels, and workplaces, designed and delivered turnkey by one Dubai studio, at a fixed and honest price.",
   image: {
     src: "/images/hero.jpg",
     ...wide,
@@ -46,7 +46,7 @@ export const story: StoryChapter[] = [
     label: "I · The city",
     title: "Shade came",
     accent: "first.",
-    body: "Before the towers, Dubai built wind towers, courtyards, and deep doorways. Every Liwan house still starts there.",
+    body: "Before the towers, Dubai built wind towers, courtyards, and deep doorways. Every Opulent Living home still starts there.",
     image: {
       src: "/images/story-heritage.jpg",
       ...wide,
@@ -89,7 +89,7 @@ export const story: StoryChapter[] = [
   {
     label: "V · The room",
     title: "This is",
-    accent: "Liwan.",
+    accent: "Opulent Living.",
     body: hero.sub,
     image: hero.image,
   },
@@ -98,7 +98,7 @@ export const story: StoryChapter[] = [
 // Placeholder figures, to replace with the client's real numbers.
 export const stats = [
   { value: "140+", label: "Projects delivered" },
-  { value: "18", label: "Years in Dubai" },
+  { value: "18", label: "Years of design experience" },
   { value: "3", label: "Cities: Dubai, Abu Dhabi, Riyadh" },
   { value: "1", label: "Studio from concept to keys" },
 ] as const;
@@ -108,7 +108,7 @@ export const credentials = [
   "Dubai Municipality approved fit-out",
   "DDA and Trakhees approvals in-house",
   "Own joinery workshop in Al Quoz",
-  "Ten-year joinery warranty",
+  "Fixed, itemised quotes",
 ] as const;
 
 export const manifesto =
@@ -132,10 +132,10 @@ export const sectors = [
   {
     number: "02",
     slug: "penthouses",
-    name: "Penthouses",
-    line: "High rooms with the glare edited out.",
+    name: "Apartments",
+    line: "Apartments and penthouses with the glare edited out.",
     href: "/practice#penthouses",
-    body: "A penthouse in Dubai is mostly a problem of light. We screen, layer, and soften the edges until the view can be lived with at three in the afternoon, then finish the rooms around it.",
+    body: "An apartment in Dubai is mostly a problem of light. We screen, layer, and soften the edges until the view can be lived with at three in the afternoon, then finish the rooms around it.",
     scope: ["Layout reconfiguration", "Glare and acoustic control", "Bespoke joinery", "Smart lighting"],
     image: {
       src: "/images/sector-penthouses.jpg",

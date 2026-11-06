@@ -136,7 +136,7 @@ function Caption({
             transition={{ duration: 1, delay: 1.6 }}
           >
             <span className="relative h-8 w-px overflow-hidden bg-beige/20" aria-hidden="true">
-              <span className="animate-cue absolute inset-x-0 top-0 h-1/2 bg-aqua" />
+              <span className="animate-cue absolute inset-x-0 top-0 h-1/2 bg-brass" />
             </span>
             Scroll to begin the story
           </motion.p>
@@ -177,7 +177,7 @@ function StoryFilm() {
   });
 
   return (
-    <section ref={ref} className="theme-night story-film relative h-[420vh]" id="top" aria-label="The Liwan story">
+    <section ref={ref} className="theme-night story-film relative h-[420vh]" id="top" aria-label="The Opulent Living story">
       <div className="sticky top-0 h-svh overflow-hidden">
         {story.map((chapter, i) => (
           <Layer key={chapter.image.src} chapter={chapter} index={i} progress={scrollYProgress} />
@@ -210,7 +210,7 @@ function StoryFilm() {
                 </a>
               </div>
               <div className="h-px w-full bg-beige/20" aria-hidden="true">
-                <motion.div style={{ scaleX: scrollYProgress }} className="h-px origin-left bg-aqua" />
+                <motion.div style={{ scaleX: scrollYProgress }} className="h-px origin-left bg-brass" />
               </div>
             </div>
             <motion.div
@@ -238,7 +238,7 @@ function StoryFilm() {
 
 function StoryStack() {
   return (
-    <section className="theme-night story-stack" aria-label="The Liwan story">
+    <section className="theme-night story-stack" aria-label="The Opulent Living story">
       {story.map((chapter, i) => (
         <div key={chapter.label} className="relative flex min-h-[85svh] items-end overflow-hidden">
           <Image

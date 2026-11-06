@@ -10,7 +10,7 @@ export default function NotFound() {
         <h1 className="mt-6 font-display text-5xl text-beige md:text-7xl">This room is not on the plan.</h1>
         <p className="mt-6 max-w-md text-ash">The page is missing. The houses are still here.</p>
         <Button asChild className="mt-10">
-          <Link href="/">Back to Liwan</Link>
+          <Link href="/">Back to Opulent Living</Link>
         </Button>
       </Container>
     </section>

@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const projectTypes = [
   "Villa",
-  "Penthouse",
+  "Apartment or penthouse",
   "Hospitality",
   "Commercial",
   "Turnkey fit-out",
@@ -10,10 +10,10 @@ export const projectTypes = [
 ] as const;
 
 export const budgets = [
-  "Under AED 1M",
-  "AED 1M – 3M",
-  "AED 3M – 7M",
-  "AED 7M+",
+  "Under AED 150K",
+  "AED 150K – 500K",
+  "AED 500K – 1.5M",
+  "AED 1.5M+",
   "Prefer to discuss",
 ] as const;
 
@@ -21,7 +21,7 @@ export const timelines = ["As soon as possible", "Within 3 months", "3 – 6 mon
 
 export const sectorToProjectType: Record<string, (typeof projectTypes)[number]> = {
   villas: "Villa",
-  penthouses: "Penthouse",
+  penthouses: "Apartment or penthouse",
   hospitality: "Hospitality",
   commercial: "Commercial",
   "fit-out": "Turnkey fit-out",

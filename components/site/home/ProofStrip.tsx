@@ -23,7 +23,7 @@ export function ProofStrip() {
         >
           {credentials.map((item) => (
             <li key={item} className="flex items-center gap-3 py-2 font-display text-xl text-beige">
-              <span className="size-1.5 shrink-0 rotate-45 bg-aqua" aria-hidden="true" />
+              <span className="size-1.5 shrink-0 rotate-45 bg-brass" aria-hidden="true" />
               {item}
             </li>
           ))}

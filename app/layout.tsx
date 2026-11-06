@@ -30,13 +30,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Liwan — Interior architecture & design, Dubai",
-    template: "%s — Liwan",
+    default: "Opulent Living — Affordable luxury interior design, Dubai",
+    template: "%s — Opulent Living",
   },
   description: site.description,
   openGraph: {
     type: "website",
-    siteName: "Liwan",
+    siteName: "Opulent Living",
     locale: "en_AE",
   },
 };
@@ -45,7 +45,10 @@ const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": `${site.url}/#studio`,
-  name: "Liwan",
+  name: site.name,
+  legalName: site.legalName,
+  founder: { "@type": "Person", name: site.founder },
+  priceRange: "$$",
   description: site.description,
   url: site.url,
   image: `${site.url}/images/hero.jpg`,

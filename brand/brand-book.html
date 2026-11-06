@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Opulent Living Design Services — Brand Identity Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Reem+Kufi:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --emerald: #0f4d3f;
+    --emerald-deep: #0b3b30;
+    --pine: #0b2e27;
+    --gold: #c9a23f;
+    --gold-metal: #d4af37;
+    --champagne: #e8cb7a;
+    --ivory: #fbf7f0;
+    --sand: #f2e6d3;
+    --stone: #eadfcb;
+    --ash: #5b6b62;
+    --foil: linear-gradient(120deg, #9c7424 0%, #e9cf86 28%, #b88a2c 52%, #f4dd99 74%, #a77d27 100%);
+  }
+  @page { size: 297mm 210mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #777; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Jost", sans-serif; font-weight: 300; color: var(--pine); }
+  .page { width: 297mm; height: 210mm; position: relative; overflow: hidden; background: var(--ivory); break-after: page; page-break-after: always; margin: 0 auto 10mm; }
+  @media print { .page { margin: 0; } html, body { background: none; } }
+  .pad { position: absolute; inset: 16mm 18mm; }
+  .green { background: var(--emerald); color: var(--ivory); }
+  .deep { background: var(--emerald-deep); color: var(--ivory); }
+  .pinebg { background: var(--pine); color: var(--ivory); }
+  .sand { background: var(--sand); }
+  .stone { background: var(--stone); }
+  .eyebrow { font-size: 8pt; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
+  .green .eyebrow, .deep .eyebrow, .pinebg .eyebrow { color: var(--champagne); }
+  h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 300; line-height: 1.02; }
+  h1 { font-size: 54pt; }
+  h2 { font-size: 34pt; margin-top: 4mm; }
+  h2 em, h1 em { font-style: italic; color: var(--gold); }
+  .green h2 em, .deep h2 em, .pinebg h2 em, .green h1 em, .deep h1 em { color: var(--champagne); }
+  h3 { font-size: 17pt; font-weight: 400; }
+  p { font-size: 9.5pt; line-height: 1.6; }
+  .muted { color: var(--ash); }
+  .green .muted, .deep .muted, .pinebg .muted { color: #c9dbd2; }
+  .folio { position: absolute; bottom: 8mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; font-size: 7pt; letter-spacing: .28em; text-transform: uppercase; color: var(--ash); }
+  .green .folio, .deep .folio, .pinebg .folio { color: #9fbcb1; }
+  .rule { height: 1px; background: currentColor; opacity: .18; }
+  .grid { display: grid; gap: 6mm; }
+  .foil-text { background: var(--foil); -webkit-background-clip: text; background-clip: text; color: transparent !important; }
+  .foil-bg { background: var(--foil); }
+  .ar-text { font-family: "Amiri", serif; direction: rtl; }
+  img { display: block; }
+  .cover-img { width: 100%; height: 100%; object-fit: cover; }
+  .pat { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  /* Logos */
+  .lg { display: inline-flex; line-height: 1; }
+  .lg svg { display: block; overflow: visible; }
+  .lg.stack { flex-direction: column; align-items: center; text-align: center; }
+  .lg.row { flex-direction: row; align-items: center; gap: .6em; }
+  .lg .txt { display: flex; flex-direction: column; }
+  .lg.stack .txt { align-items: center; }
+  .lg.row .txt { align-items: flex-start; }
+  .lg .orn { width: 2.6em; height: .3em; margin-top: .42em; }
+  .lg.row .orn { margin-left: -.15em; }
+  .lg .ar { direction: rtl; white-space: nowrap; line-height: 1.6; padding: 0 .1em; margin-bottom: -.25em; }
+  .lg .ar.foil-text { -webkit-box-decoration-break: clone; }
+  .lg .w3 { font-family: "Jost", sans-serif; font-weight: 400; font-size: .15em; letter-spacing: .6em; margin-right: -.6em; margin-top: 1.5em; opacity: .8; white-space: nowrap; }
+
+  .lgA .mk { width: 2.3em; height: 2.875em; }
+  .lgA.row .mk { width: 1.9em; height: 2.375em; }
+  .lgA .w1 { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: .6em; letter-spacing: .36em; margin-right: -.36em; margin-top: .75em; white-space: nowrap; }
+  .lgA.row .w1 { margin-top: 0; }
+  .lgA .ar { font-family: "Aref Ruqaa", serif; font-weight: 700; font-size: .56em; margin-top: .28em; }
+
+  .lgB .mk { width: 2.6em; height: 2.76em; }
+  .lgB.row .mk { width: 2.1em; height: 2.23em; }
+  .lgB .w1 { font-family: "Cinzel", serif; font-weight: 600; font-size: .7em; letter-spacing: .2em; margin-right: -.2em; margin-top: .45em; }
+  .lgB.row .w1 { margin-top: 0; }
+  .lgB .w2 { font-family: "Cinzel", serif; font-weight: 500; font-size: .24em; letter-spacing: 1.05em; margin-right: -1.05em; margin-top: .7em; }
+  .lgB .ar { font-family: "Amiri", serif; font-weight: 700; font-size: .5em; margin-top: .35em; }
+
+  .lgC .mk { width: 2.5em; height: 2.5em; }
+  .lgC.row .mk { width: 2.1em; height: 2.1em; }
+  .lgC .w1 { font-family: "Jost", sans-serif; font-weight: 300; font-size: .44em; letter-spacing: .58em; margin-right: -.58em; margin-top: 1.1em; white-space: nowrap; }
+  .lgC.row .w1 { margin-top: 0; }
+  .lgC .ar { font-family: "Reem Kufi", sans-serif; font-weight: 500; font-size: .46em; margin-top: .45em; letter-spacing: 0; }
+
+  .swatch { border-radius: 2mm; overflow: hidden; display: flex; flex-direction: column; }
+  .swatch .chip { flex: 1; position: relative; }
+  .swatch .meta { padding: 3mm 3.5mm; background: #fff; font-size: 7.5pt; line-height: 1.55; color: var(--pine); }
+  .swatch .meta b { font-family: "Cormorant Garamond", serif; font-size: 13pt; font-weight: 500; display: block; margin-bottom: 1mm; }
+  .tag { display: inline-block; font-size: 7pt; letter-spacing: .24em; text-transform: uppercase; padding: 1.3mm 2.6mm; border: 1px solid currentColor; border-radius: 10mm; opacity: .8; }
+  .card-shadow { box-shadow: 0 1.5mm 3mm rgba(0,0,0,.18), 0 6mm 14mm rgba(0,0,0,.22); }
+  .xmark { position: absolute; top: 2mm; right: 2mm; width: 6mm; height: 6mm; border-radius: 50%; background: #b23b2e; color: #fff; font: 600 9pt/6mm "Jost"; text-align: center; }
+  .tick { background: #2f7a55; }
+  .tile { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="foil" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9c7424" />
+      <stop offset=".3" stop-color="#ecd38b" />
+      <stop offset=".55" stop-color="#b88a2c" />
+      <stop offset=".78" stop-color="#f4dd99" />
+      <stop offset="1" stop-color="#a77d27" />
+    </linearGradient>
+    <pattern id="bp" width="64" height="64" patternUnits="userSpaceOnUse">
+      <g transform="scale(1.6)" fill="none" stroke="#c9a23f" stroke-width=".7">
+        <path d="M20 6L34 20L20 34L6 20Z" /><path d="M10.1 10.1H29.9V29.9H10.1Z" />
+        <path d="M10.1 10.1L0 0M29.9 10.1L40 0M29.9 29.9L40 40M10.1 29.9L0 40M20 6V0M34 20H40M20 34V40M6 20H0" />
+        <circle cx="20" cy="20" r="3" />
+      </g>
+    </pattern>
+    <pattern id="bp-fine" width="28" height="28" patternUnits="userSpaceOnUse">
+      <g transform="scale(.7)" fill="none" stroke="#c9a23f" stroke-width="1">
+        <path d="M20 6L34 20L20 34L6 20Z" /><path d="M10.1 10.1H29.9V29.9H10.1Z" />
+        <path d="M10.1 10.1L0 0M29.9 10.1L40 0M29.9 29.9L40 40M10.1 29.9L0 40M20 6V0M34 20H40M20 34V40M6 20H0" />
+      </g>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- 01 COVER -->
+<section class="page deep">
+  <svg class="pat" style="opacity:.13;right:52%;width:48%"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+  <div style="position:absolute;inset:0 0 0 52%;">
+    <img class="cover-img" src="../public/images/story-majlis.jpg" style="object-position:88% center;" alt="" />
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,var(--emerald-deep) 0%,rgba(11,59,48,0) 22%);"></div>
+  </div>
+  <div class="pad" style="right:50%;display:flex;flex-direction:column;justify-content:space-between;">
+    <p class="eyebrow">Brand identity book · Version 2.0 · November 2026</p>
+    <div>
+      <span data-logo="1" data-layout="mark" data-c="#fbf7f0" data-a="url(#foil)" data-s="22"></span>
+      <h1 style="margin-top:7mm;">Opulence,<br /><em>within reach.</em></h1>
+      <p class="ar-text foil-text" style="font-size:20pt;margin-top:3mm;text-align:left;">الفخامة في متناول يدك</p>
+      <p class="muted" style="margin-top:6mm;max-width:105mm;">Brand strategy, three logo directions rooted in Arabian craft, brand guidelines, and mockups for Opulent Living Design Services, Dubai. Founded by Jyoti Joshi.</p>
+    </div>
+    <div style="display:flex;gap:10mm;font-size:7.5pt;letter-spacing:.24em;text-transform:uppercase;color:#9fbcb1;">
+      <span>Strategy</span><span>Concepts</span><span>Guidelines</span><span>Applications</span>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PROCESS -->
+<section class="page">
+  <div class="pad">
+    <p class="eyebrow">How this brand was built</p>
+    <h2>From a word to a <em>world.</em></h2>
+    <p class="muted" style="max-width:160mm;margin-top:5mm;">Graphic designers do not start with a logo. They start with the business, the people it serves, and the culture it lives in. For a Dubai studio serving Emirati and Arab families, that means hospitality, privacy, heritage craft, and a bilingual identity from day one.</p>
+    <div class="grid" style="grid-template-columns:repeat(7,1fr);margin-top:14mm;gap:4mm;">
+      <div><div class="foil-text" style="font:400 30pt 'Cormorant Garamond'">01</div><div class="rule" style="margin:3mm 0"></div><h3>Discover</h3><p class="muted" style="margin-top:2mm">Brief, founder interview, competitors, and the meaning of the name.</p></div>
+      <div><div class="foil-text" style="font:400 30pt 'Cormorant Garamond'">02</div><div class="rule" style="margin:3mm 0"></div><h3>Define</h3><p class="muted" style="margin-top:2mm">Audience, culture, personality, and tone in English and Arabic.</p></div>
+      <div><div class="foil-text" style="font:400 30pt 'Cormorant Garamond'">03</div><div class="rule" style="margin:3mm 0"></div><h3>Mood</h3><p class="muted" style="margin-top:2mm">Majlis, mashrabiya, date palm, marble, and brass.</p></div>
+      <div><div class="foil-text" style="font:400 30pt 'Cormorant Garamond'">04</div><div class="rule" style="margin:3mm 0"></div><h3>Symbols</h3><p class="muted" style="margin-top:2mm">Gate, palm, and star: three symbols of Arabian living.</p></div>
+      <div><div class="foil-text" style="font:400 30pt 'Cormorant Garamond'">05</div><div class="rule" style="margin:3mm 0"></div><h3>Concepts</h3><p class="muted" style="margin-top:2mm">Three emblems with bilingual wordmarks, tested large and small.</p></div>
+      <div><div class="foil-text" style="font:400 30pt 'Cormorant Garamond'">06</div><div class="rule" style="margin:3mm 0"></div><h3>Guidelines</h3><p class="muted" style="margin-top:2mm">Colour, type, pattern, clear space, and what not to do.</p></div>
+      <div><div class="foil-text" style="font:400 30pt 'Cormorant Garamond'">07</div><div class="rule" style="margin:3mm 0"></div><h3>Apply</h3><p class="muted" style="margin-top:2mm">Cards, stationery, hoardings, signage, and social media.</p></div>
+    </div>
+    <div class="green" style="position:absolute;left:0;right:0;bottom:4mm;height:62mm;display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;overflow:hidden;">
+      <svg class="pat" style="opacity:.08"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+      <div style="position:relative;padding:8mm;border-right:1px solid rgba(232,203,122,.25);display:flex;flex-direction:column;justify-content:space-between;">
+        <p class="eyebrow">The brief</p>
+        <p style="font-family:'Cormorant Garamond';font-size:19pt;line-height:1.25;font-style:italic;">“Wealthy green, gold, and beige. <span style="color:var(--champagne)">Affordable luxury.</span>”</p>
+        <p class="muted" style="font-size:8pt;">Jyoti Joshi, founder</p>
+      </div>
+      <div style="position:relative;padding:8mm;border-right:1px solid rgba(232,203,122,.25);">
+        <p class="eyebrow">Client</p>
+        <h3 style="margin-top:4mm;">Opulent Living Design Services</h3>
+        <p class="muted" style="margin-top:2mm;">Interior design and turnkey fit-out for homes and hospitality across Dubai.</p>
+      </div>
+      <div style="position:relative;padding:8mm;border-right:1px solid rgba(232,203,122,.25);">
+        <p class="eyebrow">Market</p>
+        <h3 style="margin-top:4mm;">Emirati and Arab families</h3>
+        <p class="muted" style="margin-top:2mm;">Villas, apartments, and majlis spaces, plus cafés and boutiques. Everything in Arabic and English.</p>
+      </div>
+      <div style="position:relative;padding:8mm;">
+        <p class="eyebrow">Deliverables</p>
+        <p style="margin-top:4mm;font-size:9pt;line-height:1.9;">Strategy and tone<br />Three logo directions<br />Colour, type, and pattern<br />Cards, signage, and social</p>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Opulent Living · Brand identity</span><span>02</span></div>
+</section>
+
+<!-- 03 THE WORD -->
+<section class="page green">
+  <svg class="pat" style="opacity:.07"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+  <div class="pad" style="display:grid;grid-template-columns:1.05fr 1fr;gap:16mm;">
+    <div>
+      <p class="eyebrow">01 · Discover — The name</p>
+      <h2 style="font-size:40pt;">o·pu·lent <em>liv·ing</em></h2>
+      <p class="muted" style="margin-top:3mm;font-style:italic;font-family:'Cormorant Garamond';font-size:13pt;">noun phrase</p>
+      <p style="margin-top:6mm;font-family:'Cormorant Garamond';font-size:16pt;line-height:1.35;font-weight:300;">A way of life marked by great wealth, lavish comfort, grand aesthetics, and an abundance of fine things.</p>
+      <p class="muted" style="margin-top:3mm;font-size:8pt;">After the Cambridge and Merriam-Webster dictionaries.</p>
+      <div class="grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:12mm;gap:5mm;">
+        <div><div class="rule"></div><h3 style="margin-top:3mm;color:var(--champagne)">Lavish display</h3><p class="muted" style="margin-top:2mm;font-size:8.5pt;">Art, custom architecture, and pieces that are meant to be seen.</p></div>
+        <div><div class="rule"></div><h3 style="margin-top:3mm;color:var(--champagne)">Rich materials</h3><p class="muted" style="margin-top:2mm;font-size:8.5pt;">Marble, gold accents, crystal chandeliers, and plush textures.</p></div>
+        <div><div class="rule"></div><h3 style="margin-top:3mm;color:var(--champagne)">Abundance</h3><p class="muted" style="margin-top:2mm;font-size:8.5pt;">More than enough: options, comfort, and detail beyond the basic.</p></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="border:1px solid rgba(232,203,122,.45);padding:10mm;background:rgba(11,46,39,.55);">
+        <p class="eyebrow">The tension we design for</p>
+        <p style="margin-top:5mm;font-family:'Cormorant Garamond';font-size:19pt;line-height:1.3;">The name promises <span style="color:var(--champagne)">opulence</span>. The founder promises <span style="color:var(--champagne)">affordable luxury</span>.</p>
+        <p class="muted" style="margin-top:5mm;">In Arabian culture, generosity to the guest (karam) is the truest wealth. The brand keeps the grandeur of the majlis and drops the excess: grand on the eye, honest on the invoice.</p>
+        <div class="rule" style="margin:7mm 0;"></div>
+        <p class="eyebrow">Brand idea</p>
+        <p class="foil-text" style="margin-top:3mm;font-family:'Cormorant Garamond';font-size:30pt;font-style:italic;line-height:1.1;">Opulence, within reach.</p>
+        <p class="ar-text foil-text" style="margin-top:2mm;font-size:22pt;">الفخامة في متناول يدك</p>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Discover</span><span>03</span></div>
+</section>
+
+<!-- 04 STRATEGY -->
+<section class="page">
+  <div class="pad" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10mm;">
+    <div>
+      <p class="eyebrow">02 · Define</p>
+      <h2>Who it is <em>for.</em></h2>
+      <div style="margin-top:8mm;display:flex;flex-direction:column;gap:5mm;">
+        <div><h3>Emirati and Arab families</h3><p class="muted">Homes built around the majlis, privacy for the family wing, and generous hospitality for guests.</p></div>
+        <div><h3>Villa and apartment owners</h3><p class="muted">Residents across Dubai who want a five-star home without a five-star mark-up.</p></div>
+        <div><h3>Hospitality and retail</h3><p class="muted">Cafés, majlis lounges, salons, and boutiques that want a grand first impression on a sensible budget.</p></div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">Personality</p>
+      <h2>Five <em>traits.</em></h2>
+      <div style="margin-top:8mm;display:flex;flex-direction:column;">
+        <div style="display:flex;justify-content:space-between;border-top:1px solid #e3d3b8;padding:3mm 0;"><h3>Grand</h3><span class="muted" style="font-size:8.5pt">not gaudy</span></div>
+        <div style="display:flex;justify-content:space-between;border-top:1px solid #e3d3b8;padding:3mm 0;"><h3>Hospitable</h3><span class="muted" style="font-size:8.5pt">not cold or exclusive</span></div>
+        <div style="display:flex;justify-content:space-between;border-top:1px solid #e3d3b8;padding:3mm 0;"><h3>Rooted</h3><span class="muted" style="font-size:8.5pt">in Arabian craft, not cliché</span></div>
+        <div style="display:flex;justify-content:space-between;border-top:1px solid #e3d3b8;padding:3mm 0;"><h3>Honest</h3><span class="muted" style="font-size:8.5pt">not salesy</span></div>
+        <div style="display:flex;justify-content:space-between;border-top:1px solid #e3d3b8;border-bottom:1px solid #e3d3b8;padding:3mm 0;"><h3>Confident</h3><span class="muted" style="font-size:8.5pt">not loud</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">Tone of voice · bilingual</p>
+      <h2>How it <em>speaks.</em></h2>
+      <div class="sand" style="margin-top:8mm;padding:6mm;">
+        <p class="eyebrow" style="color:var(--emerald)">We say</p>
+        <p style="font-family:'Cormorant Garamond';font-size:14pt;line-height:1.35;margin-top:2mm;">“A majlis worthy of every guest, at a price that makes sense.”</p>
+        <p class="ar-text" style="font-size:14pt;margin-top:2mm;color:var(--emerald)">مجلس يليق بكل ضيف، بسعر مدروس.</p>
+        <p class="eyebrow" style="color:#b23b2e;margin-top:6mm;">We avoid</p>
+        <p style="font-family:'Cormorant Garamond';font-size:14pt;line-height:1.35;margin-top:2mm;text-decoration:line-through;opacity:.6;">“Ultra-exclusive bespoke opulence for the elite few.”</p>
+      </div>
+      <p class="muted" style="font-size:7.5pt;margin-top:4mm;">All Arabic copy in this book is a draft and must be checked by a native Arabic copywriter before printing.</p>
+    </div>
+  </div>
+  <div style="position:absolute;left:18mm;right:18mm;bottom:17mm;height:58mm;display:grid;grid-template-columns:1fr 2fr;gap:10mm;">
+    <div style="display:flex;flex-direction:column;justify-content:center;">
+      <p class="eyebrow">Competitive landscape</p>
+      <h3 style="margin-top:3mm;font-size:20pt;">Where we <em style="color:var(--gold)">sit.</em></h3>
+      <p class="muted" style="margin-top:3mm;">Dubai's luxury studios charge ultra-premium fees, and the affordable fit-out firms look generic. Nobody owns heritage grandeur at a fair price. That gap is Opulent Living's.</p>
+      <p class="muted" style="margin-top:3mm;font-size:7pt;">Categories shown, not named firms. Replace with an audit of six to eight real Dubai studios.</p>
+    </div>
+    <div class="sand" style="position:relative;">
+      <div style="position:absolute;left:50%;top:5mm;bottom:5mm;width:1px;background:#cdb894;"></div>
+      <div style="position:absolute;top:50%;left:5mm;right:5mm;height:1px;background:#cdb894;"></div>
+      <span style="position:absolute;left:50%;top:1.2mm;transform:translateX(-50%);font-size:6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);background:var(--sand);padding:0 2mm;">Arabian heritage</span>
+      <span style="position:absolute;left:50%;bottom:1.2mm;transform:translateX(-50%);font-size:6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);background:var(--sand);padding:0 2mm;">Generic, international</span>
+      <span style="position:absolute;left:2mm;top:50%;transform:translateY(-130%);font-size:6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);">Accessible price</span>
+      <span style="position:absolute;right:2mm;top:50%;transform:translateY(-130%);font-size:6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);">Ultra-premium</span>
+      <div style="position:absolute;left:12%;top:68%;display:flex;align-items:center;gap:1.5mm;font-size:7.5pt;"><span style="width:3mm;height:3mm;border-radius:50%;background:#9aa79f"></span>Fit-out contractors</div>
+      <div style="position:absolute;left:24%;top:82%;display:flex;align-items:center;gap:1.5mm;font-size:7.5pt;"><span style="width:3mm;height:3mm;border-radius:50%;background:#9aa79f"></span>Furniture-store design services</div>
+      <div style="position:absolute;left:62%;top:70%;display:flex;align-items:center;gap:1.5mm;font-size:7.5pt;"><span style="width:3mm;height:3mm;border-radius:50%;background:#9aa79f"></span>International minimal studios</div>
+      <div style="position:absolute;left:70%;top:18%;display:flex;align-items:center;gap:1.5mm;font-size:7.5pt;"><span style="width:3mm;height:3mm;border-radius:50%;background:#9aa79f"></span>Palace design houses</div>
+      <div style="position:absolute;left:24%;top:16%;display:flex;align-items:center;gap:2mm;"><span class="foil-bg" style="width:5.5mm;height:5.5mm;border-radius:50%;box-shadow:0 0 0 1.5mm rgba(201,162,63,.25)"></span><span style="font-family:'Cormorant Garamond';font-size:13pt;font-weight:500;color:var(--emerald)">Opulent Living</span></div>
+    </div>
+  </div>
+  <div class="folio"><span>Define</span><span>04</span></div>
+</section>
+
+<!-- 05 MOOD BOARD -->
+<section class="page sand">
+  <div class="pad" style="bottom:20mm;display:grid;grid-template-columns:62mm 1fr;grid-template-rows:minmax(0,1fr);gap:10mm;">
+    <div>
+      <p class="eyebrow">03 · Mood board</p>
+      <h2>Majlis, mashrabiya, <em>emerald.</em></h2>
+      <p class="muted" style="margin-top:6mm;">The feeling of an Emirati home at its most welcoming: coffee poured from a brass dallah, light filtered through carved screens, marble underfoot, and deep green velvet.</p>
+      <div style="margin-top:7mm;display:flex;flex-direction:column;gap:2.5mm;">
+        <div style="display:flex;align-items:center;gap:3mm;"><span style="width:9mm;height:9mm;background:var(--emerald);border-radius:50%"></span><span style="font-size:8.5pt">Wealthy green — the date palm and velvet</span></div>
+        <div style="display:flex;align-items:center;gap:3mm;"><span class="foil-bg" style="width:9mm;height:9mm;border-radius:50%"></span><span style="font-size:8.5pt">Gold — brass dallah and calligraphy</span></div>
+        <div style="display:flex;align-items:center;gap:3mm;"><span style="width:9mm;height:9mm;background:var(--stone);border-radius:50%;border:1px solid #d6c4a5"></span><span style="font-size:8.5pt">Beige — desert sand and travertine</span></div>
+      </div>
+      <p class="eyebrow" style="margin-top:7mm;">Keywords</p>
+      <p style="font-family:'Cormorant Garamond';font-size:13pt;line-height:1.5;margin-top:2mm;">Majlis · Mashrabiya · Date palm · Arches · Calligraphy · Karam (generosity) · Marble · Brass</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:3mm;min-height:0;">
+      <img src="../public/images/story-majlis.jpg" style="grid-row:span 2;width:100%;height:100%;object-fit:cover;" alt="" />
+      <img src="../public/images/story-craft.jpg" style="width:100%;height:100%;object-fit:cover;" alt="" />
+      <img src="../public/images/story-heritage.jpg" style="width:100%;height:100%;object-fit:cover;" alt="" />
+      <img src="../public/images/project-court-house.jpg" style="width:100%;height:100%;object-fit:cover;" alt="" />
+      <div style="display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:3mm;min-height:0;">
+        <div style="background:var(--emerald);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;"><svg class="pat" style="opacity:.35"><rect width="100%" height="100%" fill="url(#bp-fine)" /></svg><span class="ar-text foil-text" style="font-family:'Aref Ruqaa';font-size:22pt;position:relative">كَرَم</span></div>
+        <img src="../public/images/material-brass.jpg" style="width:100%;height:100%;object-fit:cover;min-height:0;" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Mood</span><span>05</span></div>
+</section>
+
+<!-- 06 SYMBOLS -->
+<section class="page">
+  <div class="pad">
+    <p class="eyebrow">04 · Symbols of Arabian living</p>
+    <h2>Gate, palm, and <em>star.</em></h2>
+    <p class="muted" style="max-width:170mm;margin-top:4mm;">Each keyword from the brief is traced back to a symbol Emirati families already treasure, then refined into a mark that can be foiled, carved, embroidered, and shown on a phone screen.</p>
+    <div class="grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:10mm;gap:8mm;">
+      <div class="sand" style="padding:7mm;height:112mm;display:flex;flex-direction:column;">
+        <p class="eyebrow" style="color:var(--emerald)">الباب · Al Bab · The gate</p>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6mm;">
+          <span style="opacity:.35" data-logo="1" data-layout="mark" data-c="#0f4d3f" data-a="#0f4d3f" data-s="18" data-plain="1"></span>
+          <span style="font-size:16pt;color:var(--gold)">→</span>
+          <span data-logo="1" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="32"></span>
+        </div>
+        <h3>The majlis gate</h3>
+        <p class="muted" style="margin-top:1.5mm;">An ogee arch filled with a mashrabiya lattice: the doorway where every guest is welcomed.</p>
+      </div>
+      <div class="sand" style="padding:7mm;height:112mm;display:flex;flex-direction:column;">
+        <p class="eyebrow" style="color:var(--emerald)">النخلة · Nakhla · The palm</p>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6mm;">
+          <span style="opacity:.35" data-logo="2" data-layout="mark" data-c="#0f4d3f" data-a="#0f4d3f" data-s="18"></span>
+          <span style="font-size:16pt;color:var(--gold)">→</span>
+          <span data-logo="2" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="32"></span>
+        </div>
+        <h3>The palm crest</h3>
+        <p class="muted" style="margin-top:1.5mm;">Two date-palm fronds, the UAE's symbol of generosity and abundance, crowned like a royal crest.</p>
+      </div>
+      <div class="sand" style="padding:7mm;height:112mm;display:flex;flex-direction:column;">
+        <p class="eyebrow" style="color:var(--emerald)">النجمة · Najma · The star</p>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6mm;">
+          <span style="opacity:.35" data-logo="3" data-layout="mark" data-c="#0f4d3f" data-a="#0f4d3f" data-s="18"></span>
+          <span style="font-size:16pt;color:var(--gold)">→</span>
+          <span data-logo="3" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="32"></span>
+        </div>
+        <h3>The star seal</h3>
+        <p class="muted" style="margin-top:1.5mm;">An eight-point Islamic geometric star inside a beaded ring, like a gold coin or a signet seal.</p>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Symbols</span><span>06</span></div>
+</section>
+
+<!-- 07 CONCEPT A -->
+<section class="page">
+  <div style="position:absolute;inset:0 50% 0 0;" class="green">
+    <svg class="pat" style="opacity:.09"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;" data-logo="1" data-layout="stack" data-c="#fbf7f0" data-a="url(#foil)" data-s="46" data-sub="1"></div>
+    <p class="eyebrow" style="position:absolute;top:16mm;left:18mm;">Concept 01</p>
+  </div>
+  <div class="pad" style="left:calc(50% + 14mm);display:flex;flex-direction:column;">
+    <p class="eyebrow">Concept 01 · Al Bab الباب</p>
+    <h2>The <em>Majlis Gate</em></h2>
+    <p class="muted" style="margin-top:5mm;">An ogee arch, as found on Emirati palaces and mosques, filled with a hand-cut mashrabiya lattice. A gold medallion at the threshold carries the “OL” monogram, and a pearl finial crowns the arch. Below, the name in classic serif capitals over Arabic Ruqaa calligraphy.</p>
+    <div style="display:flex;gap:2mm;margin-top:5mm;flex-wrap:wrap;"><span class="tag">Architectural</span><span class="tag">Majlis heritage</span><span class="tag">Bilingual</span></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:4mm;margin-top:auto;">
+      <div class="sand tile" style="height:32mm;" data-logo="1" data-layout="row" data-c="#0b2e27" data-a="#b8862b" data-s="15"></div>
+      <div class="pinebg tile" style="height:32mm;" data-logo="1" data-layout="row" data-c="#fbf7f0" data-a="url(#foil)" data-s="15"></div>
+      <div class="stone tile" style="height:32mm;gap:8mm;">
+        <span data-logo="1" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="24"></span>
+        <span data-logo="1" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="11"></span>
+      </div>
+      <div class="tile" style="height:32mm;background:#fff;border:1px solid #eadfcb;" data-logo="1" data-layout="row" data-c="#0b2e27" data-a="#0b2e27" data-s="15"></div>
+    </div>
+  </div>
+  <div class="folio" style="left:calc(50% + 14mm)"><span>Concept 01</span><span>07</span></div>
+</section>
+
+<!-- 08 CONCEPT B -->
+<section class="page">
+  <div style="position:absolute;inset:0 50% 0 0;" class="pinebg">
+    <svg class="pat" style="opacity:.08"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;" data-logo="2" data-layout="stack" data-c="#fbf7f0" data-a="url(#foil)" data-s="46" data-sub="1"></div>
+    <p class="eyebrow" style="position:absolute;top:16mm;left:18mm;">Concept 02</p>
+  </div>
+  <div class="pad" style="left:calc(50% + 14mm);display:flex;flex-direction:column;">
+    <p class="eyebrow">Concept 02 · Nakhla النخلة</p>
+    <h2>The <em>Palm Crest</em></h2>
+    <p class="muted" style="margin-top:5mm;">Two date-palm fronds, each leaflet drawn in gold, curve around a monogram medallion and meet beneath a crown of three diamonds. A royal crest that speaks of generosity, abundance, and a family name, set with Roman capitals and Arabic Naskh.</p>
+    <div style="display:flex;gap:2mm;margin-top:5mm;flex-wrap:wrap;"><span class="tag">Royal</span><span class="tag">Emirati symbol</span><span class="tag">Crest</span></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:4mm;margin-top:auto;">
+      <div class="sand tile" style="height:32mm;" data-logo="2" data-layout="row" data-c="#0b2e27" data-a="#b8862b" data-s="15"></div>
+      <div class="green tile" style="height:32mm;" data-logo="2" data-layout="row" data-c="#fbf7f0" data-a="url(#foil)" data-s="15"></div>
+      <div class="stone tile" style="height:32mm;gap:8mm;">
+        <span data-logo="2" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="24"></span>
+        <span data-logo="2" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="11"></span>
+      </div>
+      <div class="tile" style="height:32mm;background:#fff;border:1px solid #eadfcb;" data-logo="2" data-layout="row" data-c="#0b2e27" data-a="#0b2e27" data-s="15"></div>
+    </div>
+  </div>
+  <div class="folio" style="left:calc(50% + 14mm)"><span>Concept 02</span><span>08</span></div>
+</section>
+
+<!-- 09 CONCEPT C -->
+<section class="page">
+  <div style="position:absolute;inset:0 50% 0 0;" class="stone">
+    <svg class="pat" style="opacity:.16"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;" data-logo="3" data-layout="stack" data-c="#0f4d3f" data-a="#b8862b" data-s="46" data-sub="1"></div>
+    <p class="eyebrow" style="position:absolute;top:16mm;left:18mm;">Concept 03</p>
+  </div>
+  <div class="pad" style="left:calc(50% + 14mm);display:flex;flex-direction:column;">
+    <p class="eyebrow">Concept 03 · Najma النجمة</p>
+    <h2>The <em>Star Seal</em></h2>
+    <p class="muted" style="margin-top:5mm;">An eight-point star from Islamic geometry, with petals and a beaded rim like an old gold dinar or a signet ring. It is precise, intricate, and modern at once, paired with a refined sans-serif name and geometric Kufi Arabic.</p>
+    <div style="display:flex;gap:2mm;margin-top:5mm;flex-wrap:wrap;"><span class="tag">Geometric</span><span class="tag">Signet seal</span><span class="tag">Modern Arabic</span></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:4mm;margin-top:auto;">
+      <div class="sand tile" style="height:32mm;" data-logo="3" data-layout="row" data-c="#0b2e27" data-a="#b8862b" data-s="15"></div>
+      <div class="green tile" style="height:32mm;" data-logo="3" data-layout="row" data-c="#fbf7f0" data-a="url(#foil)" data-s="15"></div>
+      <div class="pinebg tile" style="height:32mm;gap:8mm;">
+        <span data-logo="3" data-layout="mark" data-c="#fbf7f0" data-a="url(#foil)" data-s="24"></span>
+        <span data-logo="3" data-layout="mark" data-c="#fbf7f0" data-a="url(#foil)" data-s="11"></span>
+      </div>
+      <div class="tile" style="height:32mm;background:#fff;border:1px solid #eadfcb;" data-logo="3" data-layout="row" data-c="#0b2e27" data-a="#0b2e27" data-s="15"></div>
+    </div>
+  </div>
+  <div class="folio" style="left:calc(50% + 14mm)"><span>Concept 03</span><span>09</span></div>
+</section>
+
+<!-- 10 COMPARISON -->
+<section class="page">
+  <div class="pad">
+    <p class="eyebrow">05 · Concepts side by side</p>
+    <h2>Choosing a <em>direction.</em></h2>
+    <div class="grid" style="grid-template-columns:38mm 1fr 1fr 1fr;margin-top:7mm;gap:4mm;align-items:stretch;">
+      <div></div>
+      <h3 style="text-align:center">01 · The Majlis Gate</h3>
+      <h3 style="text-align:center">02 · The Palm Crest</h3>
+      <h3 style="text-align:center">03 · The Star Seal</h3>
+
+      <p class="muted" style="align-self:center">On wealthy green</p>
+      <div class="green tile" style="height:34mm;" data-logo="1" data-layout="row" data-c="#fbf7f0" data-a="url(#foil)" data-s="14"></div>
+      <div class="green tile" style="height:34mm;" data-logo="2" data-layout="row" data-c="#fbf7f0" data-a="url(#foil)" data-s="14"></div>
+      <div class="green tile" style="height:34mm;" data-logo="3" data-layout="row" data-c="#fbf7f0" data-a="url(#foil)" data-s="14"></div>
+
+      <p class="muted" style="align-self:center">On beige</p>
+      <div class="stone tile" style="height:34mm;" data-logo="1" data-layout="row" data-c="#0b2e27" data-a="#b8862b" data-s="14"></div>
+      <div class="stone tile" style="height:34mm;" data-logo="2" data-layout="row" data-c="#0b2e27" data-a="#b8862b" data-s="14"></div>
+      <div class="stone tile" style="height:34mm;" data-logo="3" data-layout="row" data-c="#0b2e27" data-a="#b8862b" data-s="14"></div>
+
+      <p class="muted" style="align-self:center">Small-size test<br /><span style="font-size:7.5pt">app icon, favicon, stamp</span></p>
+      <div class="sand tile" style="height:22mm;gap:6mm;"><span data-logo="1" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="13"></span><span data-logo="1" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="7"></span></div>
+      <div class="sand tile" style="height:22mm;gap:6mm;"><span data-logo="2" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="13"></span><span data-logo="2" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="7"></span></div>
+      <div class="sand tile" style="height:22mm;gap:6mm;"><span data-logo="3" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="13"></span><span data-logo="3" data-layout="mark" data-c="#0f4d3f" data-a="#b8862b" data-s="7"></span></div>
+
+      <p class="muted" style="align-self:center">Best for</p>
+      <p style="text-align:center;font-size:8.5pt;">An interior studio: it literally frames a room. Ideal for signage, embossing, and carving.</p>
+      <p style="text-align:center;font-size:8.5pt;">A grand, family-crest feel with strong Emirati pride. Ideal for launches and gifting.</p>
+      <p style="text-align:center;font-size:8.5pt;">A modern, digital-first brand. Ideal for social media, packaging, and app icons.</p>
+    </div>
+    <div class="green" style="margin-top:6mm;padding:5mm 7mm;display:flex;gap:8mm;align-items:center;">
+      <p class="eyebrow" style="white-space:nowrap">Designer's pick</p>
+      <p style="font-size:9pt;"><b style="font-weight:500;color:var(--champagne)">Concept 01, The Majlis Gate.</b> It says “interior design” and “Arabian hospitality” in one shape, carries the brand pattern inside it, and works foiled, carved in stone, or as an app icon. The guidelines that follow use it as the example and apply to any concept chosen.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Concepts</span><span>10</span></div>
+</section>
+
+<!-- 11 COLOUR -->
+<section class="page">
+  <div class="pad" style="display:flex;flex-direction:column;">
+    <p class="eyebrow">06 · Guidelines — Colour</p>
+    <h2>Wealthy green, gold, and <em>beige.</em></h2>
+    <p class="muted" style="max-width:170mm;margin-top:3mm;">Use roughly 60% beige grounds, 30% green, and 10% gold. Gold is an accent: a line, a monogram, a foil, or the lattice pattern. It is never a large flat background.</p>
+    <div class="grid" style="grid-template-columns:2fr 1fr 1.4fr 1fr 1fr 1fr;flex:1;margin-top:8mm;gap:4mm;">
+      <div class="swatch card-shadow"><div class="chip" style="background:var(--emerald)"><svg class="pat" style="opacity:.14"><rect width="100%" height="100%" fill="url(#bp)" /></svg></div><div class="meta"><b>Emerald Estate</b>HEX #0F4D3F<br />RGB 15 77 63<br />CMYK 88 38 72 34<br />Pantone 3435 C (approx.)</div></div>
+      <div class="swatch card-shadow"><div class="chip" style="background:var(--pine)"></div><div class="meta"><b>Deep Pine</b>HEX #0B2E27<br />RGB 11 46 39<br />CMYK 85 50 70 60<br />Text on light</div></div>
+      <div class="swatch card-shadow"><div class="chip foil-bg"></div><div class="meta"><b>Dallah Gold</b>HEX #C9A23F<br />RGB 201 162 63<br />CMYK 20 33 87 4<br />Pantone 871 C metallic</div></div>
+      <div class="swatch card-shadow"><div class="chip" style="background:var(--champagne)"></div><div class="meta"><b>Champagne</b>HEX #E8CB7A<br />RGB 232 203 122<br />CMYK 8 18 60 0<br />Gold text on green</div></div>
+      <div class="swatch card-shadow"><div class="chip" style="background:var(--stone)"></div><div class="meta"><b>Desert Sand</b>HEX #EADFCB<br />RGB 234 223 203<br />CMYK 7 10 20 0<br />Pantone 7527 C (approx.)</div></div>
+      <div class="swatch card-shadow"><div class="chip" style="background:var(--ivory);border-bottom:1px solid #eee"></div><div class="meta"><b>Pearl Ivory</b>HEX #FBF7F0<br />RGB 251 247 240<br />CMYK 1 2 5 0<br />Main background</div></div>
+    </div>
+    <div style="display:flex;height:6mm;margin-top:6mm;">
+      <div style="flex:60;background:var(--stone)"></div><div style="flex:30;background:var(--emerald)"></div><div class="foil-bg" style="flex:10"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;margin-top:2mm;" class="muted"><span>60% beige</span><span>30% green</span><span>10% gold</span></div>
+  </div>
+  <div class="folio"><span>Colour</span><span>11</span></div>
+</section>
+
+<!-- 12 TYPOGRAPHY -->
+<section class="page sand">
+  <div class="pad" style="display:grid;grid-template-columns:1.25fr 1fr;gap:12mm;">
+    <div>
+      <p class="eyebrow">07 · Guidelines — Typography</p>
+      <h2>English and Arabic, <em>one voice.</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:8mm;">
+        <div>
+          <p class="eyebrow" style="color:var(--emerald)">Display · Cormorant Garamond</p>
+          <p style="font-family:'Cormorant Garamond';font-size:44pt;font-weight:300;line-height:1;margin-top:2mm;">Aa <em style="color:var(--gold)">Aa</em></p>
+          <p class="muted" style="margin-top:2mm;font-size:8.5pt;">Headlines and the English wordmark.</p>
+        </div>
+        <div style="text-align:right">
+          <p class="eyebrow" style="color:var(--emerald)">Arabic display · Aref Ruqaa</p>
+          <p class="ar-text" style="font-family:'Aref Ruqaa';font-size:36pt;line-height:1.75;margin-top:-2mm;">أ ب <span style="color:var(--gold)">ج</span></p>
+          <p class="muted" style="margin-top:2mm;font-size:8.5pt;">Arabic wordmark and headlines.</p>
+        </div>
+        <div>
+          <p class="eyebrow" style="color:var(--emerald)">Text · Jost</p>
+          <p style="font-family:'Jost';font-size:34pt;font-weight:300;line-height:1;margin-top:2mm;">Aa <span style="font-weight:500">Aa</span></p>
+          <p class="muted" style="margin-top:2mm;font-size:8.5pt;">Body copy, labels, and contact details.</p>
+        </div>
+        <div style="text-align:right">
+          <p class="eyebrow" style="color:var(--emerald)">Arabic text · Amiri</p>
+          <p class="ar-text" style="font-size:30pt;line-height:1.2;margin-top:1mm;">أ ب ج د</p>
+          <p class="muted" style="margin-top:2mm;font-size:8.5pt;">Arabic body copy and contact details.</p>
+        </div>
+      </div>
+      <p class="eyebrow" style="margin-top:9mm;">Size rules</p>
+      <div style="margin-top:3mm;font-size:8.5pt;">
+        <div style="display:grid;grid-template-columns:30mm 1fr 1fr;padding:2.2mm 0;border-top:1px solid #dcc9a6;"><span class="muted">Display</span><span>Cormorant 28 pt and up</span><span class="ar-text" style="text-align:right">رقعة ١٨ نقطة فأكثر</span></div>
+        <div style="display:grid;grid-template-columns:30mm 1fr 1fr;padding:2.2mm 0;border-top:1px solid #dcc9a6;"><span class="muted">Body</span><span>Jost 9 to 11 pt</span><span class="ar-text" style="text-align:right">أميري ١٠ إلى ١٢ نقطة</span></div>
+        <div style="display:grid;grid-template-columns:30mm 1fr 1fr;padding:2.2mm 0;border-top:1px solid #dcc9a6;border-bottom:1px solid #dcc9a6;"><span class="muted">Small print</span><span>Jost 6 pt minimum</span><span class="ar-text" style="text-align:right">أميري ٧ نقاط كحد أدنى</span></div>
+      </div>
+      <p class="muted" style="margin-top:3mm;font-size:7.5pt;">Ruqaa calligraphy loses its dots below 18 pt. In small logos, cards, and signs seen from far away, set the Arabic name in Amiri Bold instead.</p>
+    </div>
+    <div style="background:var(--ivory);padding:9mm;display:flex;flex-direction:column;position:relative;overflow:hidden;">
+      <p class="eyebrow">Bilingual hierarchy</p>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:6mm;">
+        <p style="font-size:7pt;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;">Villas · Dubai Hills</p>
+        <p class="ar-text" style="font-size:9pt;color:var(--gold);">فلل · دبي هيلز</p>
+      </div>
+      <p style="font-family:'Cormorant Garamond';font-size:28pt;font-weight:300;line-height:1.05;margin-top:3mm;">A majlis worthy of <em style="color:var(--gold)">every guest.</em></p>
+      <p class="ar-text" style="font-family:'Aref Ruqaa';font-size:20pt;line-height:1.3;margin-top:2mm;text-align:right;">مجلس يليق بكل ضيف</p>
+      <p style="font-size:9pt;line-height:1.6;margin-top:3mm;color:var(--ash);">Marble-look floors, a brass-framed mirror wall, and a crystal chandelier, delivered turnkey at a fixed price.</p>
+      <p class="ar-text" style="font-size:10pt;line-height:1.8;margin-top:2mm;color:var(--ash);">أرضيات بمظهر الرخام، وجدار مرايا بإطار نحاسي، وثريا كريستالية، تسليم مفتاح بسعر ثابت.</p>
+      <div style="margin-top:6mm;display:flex;gap:4mm;align-items:stretch;">
+        <div style="flex:1;background:var(--emerald);color:var(--ivory);padding:4mm;"><p style="font-size:6pt;letter-spacing:.24em;text-transform:uppercase;color:var(--champagne);">Fixed price</p><p style="font-family:'Cormorant Garamond';font-size:18pt;margin-top:1mm;">AED 185,000</p></div>
+        <div style="flex:1;border:1px solid #dcc9a6;padding:4mm;text-align:right;"><p class="ar-text" style="font-size:8pt;color:var(--gold);">مدة التنفيذ</p><p class="ar-text" style="font-size:16pt;margin-top:1mm;">١٠ أسابيع</p></div>
+      </div>
+      <p style="margin-top:auto;font-size:8pt;letter-spacing:.24em;text-transform:uppercase;font-weight:500;"><span class="foil-bg" style="color:var(--pine);padding:3mm 5mm;display:inline-block;">Book a consultation · احجز استشارة</span></p>
+      <p class="muted" style="font-size:7pt;margin-top:4mm;">In Dubai, signs and printed materials show Arabic and English together. Arabic sits on the right or above, at equal visual weight.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Typography</span><span>12</span></div>
+</section>
+
+<!-- 13 PATTERN -->
+<section class="page green">
+  <svg class="pat" style="opacity:.22"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(15,77,63,.97) 0%,rgba(15,77,63,.85) 40%,rgba(15,77,63,.2) 75%);"></div>
+  <div class="pad" style="display:grid;grid-template-columns:1fr 1.1fr;gap:12mm;">
+    <div style="display:flex;flex-direction:column;justify-content:center;">
+      <p class="eyebrow">08 · Guidelines — Brand pattern</p>
+      <h2>The <em>mashrabiya</em> lattice.</h2>
+      <p class="muted" style="margin-top:5mm;max-width:105mm;">An eight-point khatam star repeated into a screen, the same lattice that fills the arch of the logo. Use it at low opacity on green, as foil on packaging, laser-cut in brass or timber, and as the lining of envelopes and boxes.</p>
+      <div style="display:flex;gap:6mm;margin-top:8mm;">
+        <div style="text-align:center"><div style="width:26mm;height:26mm;background:var(--emerald);position:relative;overflow:hidden;border:1px solid rgba(232,203,122,.3)"><svg class="pat" style="opacity:.25"><rect width="100%" height="100%" fill="url(#bp)" /></svg></div><p style="font-size:6.5pt;margin-top:2mm;color:#c9dbd2">Tint 25% on green</p></div>
+        <div style="text-align:center"><div style="width:26mm;height:26mm;background:var(--stone);position:relative;overflow:hidden;"><svg class="pat" style="opacity:.45"><rect width="100%" height="100%" fill="url(#bp-fine)" /></svg></div><p style="font-size:6.5pt;margin-top:2mm;color:#c9dbd2">Fine, 45% on beige</p></div>
+        <div style="text-align:center"><div style="width:26mm;height:26mm;background:var(--pine);position:relative;overflow:hidden;"><svg class="pat"><rect width="100%" height="100%" fill="url(#bp)" /></svg></div><p style="font-size:6.5pt;margin-top:2mm;color:#c9dbd2">Full foil, packaging</p></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <div class="card-shadow" style="width:120mm;height:150mm;position:relative;overflow:hidden;background:var(--pine);">
+        <svg class="pat"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+        <div style="position:absolute;inset:14mm;border:1px solid rgba(232,203,122,.6);background:rgba(11,46,39,.9);display:flex;align-items:center;justify-content:center;" data-logo="1" data-layout="stack" data-c="#fbf7f0" data-a="url(#foil)" data-s="26" data-bg="#0d3a31"></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Brand pattern</span><span>13</span></div>
+</section>
+
+<!-- 14 LOGO USAGE -->
+<section class="page">
+  <div class="pad">
+    <p class="eyebrow">09 · Guidelines — Using the logo</p>
+    <h2>Space to <em>breathe.</em></h2>
+    <div class="grid" style="grid-template-columns:1fr 1fr 1.6fr;gap:8mm;margin-top:7mm;">
+      <div>
+        <h3>Clear space</h3>
+        <p class="muted" style="margin-top:1.5mm;">Keep a margin equal to the medallion's width on every side. Nothing enters it.</p>
+        <div class="sand" style="margin-top:4mm;height:62mm;display:flex;align-items:center;justify-content:center;">
+          <div style="position:relative;padding:6mm;outline:1px dashed #b8862b;">
+            <span data-logo="1" data-layout="stack" data-c="#0b2e27" data-a="#b8862b" data-s="13"></span>
+            <span style="position:absolute;top:0;left:50%;width:1px;height:6mm;background:#b8862b;"></span>
+            <span style="position:absolute;left:0;top:50%;height:1px;width:6mm;background:#b8862b;"></span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3>Minimum size</h3>
+        <p class="muted" style="margin-top:1.5mm;">Full bilingual logo no smaller than 25 mm wide in print and 140 px on screen. Below that, use the gate emblem alone.</p>
+        <div class="sand" style="margin-top:4mm;height:62mm;display:flex;align-items:center;justify-content:space-around;">
+          <div style="text-align:center"><span data-logo="1" data-layout="stack" data-c="#0b2e27" data-a="#b8862b" data-s="8"></span><p style="font-size:6.5pt;margin-top:2mm" class="muted">25 mm · 140 px</p></div>
+          <div style="text-align:center"><span data-logo="1" data-layout="mark" data-c="#0b2e27" data-a="#b8862b" data-s="7"></span><p style="font-size:6.5pt;margin-top:2mm" class="muted">8 mm · 32 px</p></div>
+        </div>
+      </div>
+      <div>
+        <h3>Do not</h3>
+        <p class="muted" style="margin-top:1.5mm;">Keep the logo as drawn. These changes cheapen it.</p>
+        <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:3mm;margin-top:4mm;">
+          <div class="sand tile" style="height:29.5mm;"><span class="xmark">×</span><span style="transform:scaleX(1.5);display:inline-block" data-logo="1" data-layout="mark" data-c="#0b2e27" data-a="#b8862b" data-s="10"></span><p style="position:absolute;bottom:1.5mm;font-size:6.5pt" class="muted">Stretch</p></div>
+          <div class="sand tile" style="height:29.5mm;"><span class="xmark">×</span><span data-logo="1" data-layout="mark" data-c="#7a2fb0" data-a="#e0447a" data-s="10"></span><p style="position:absolute;bottom:1.5mm;font-size:6.5pt" class="muted">Recolour</p></div>
+          <div class="sand tile" style="height:29.5mm;"><span class="xmark">×</span><span style="transform:rotate(-18deg);display:inline-block" data-logo="1" data-layout="mark" data-c="#0b2e27" data-a="#b8862b" data-s="10"></span><p style="position:absolute;bottom:1.5mm;font-size:6.5pt" class="muted">Rotate</p></div>
+          <div class="tile" style="height:29.5mm;background:url(../public/images/material-walnut.jpg) center/cover;"><span class="xmark">×</span><span data-logo="1" data-layout="mark" data-c="#0b2e27" data-a="#6b5320" data-s="10" data-bg="#4a3524"></span><p style="position:absolute;bottom:1.5mm;font-size:6.5pt;color:#fff">Busy, low contrast</p></div>
+          <div class="sand tile" style="height:29.5mm;"><span class="xmark">×</span><span class="ar-text" style="font-size:7pt;position:absolute;top:4mm;left:4mm;color:var(--ash)">English only</span><span data-logo="1" data-layout="mark" data-c="#0b2e27" data-a="#b8862b" data-s="9"></span><p style="position:absolute;bottom:1.5mm;font-size:6.5pt" class="muted">Drop the Arabic on signs</p></div>
+          <div class="green tile" style="height:29.5mm;"><span class="xmark tick">✓</span><span data-logo="1" data-layout="mark" data-c="#fbf7f0" data-a="url(#foil)" data-s="10"></span><p style="position:absolute;bottom:1.5mm;font-size:6.5pt;color:#c9dbd2">Correct</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:6mm;">
+      <div class="green tile" style="height:24mm;" data-logo="1" data-layout="row" data-c="#fbf7f0" data-a="url(#foil)" data-s="11"></div>
+      <div class="stone tile" style="height:24mm;" data-logo="1" data-layout="row" data-c="#0b2e27" data-a="#b8862b" data-s="11"></div>
+      <div class="foil-bg tile" style="height:24mm;" data-logo="1" data-layout="row" data-c="#0b2e27" data-a="#0b2e27" data-s="11" data-bg="#d2ad55"></div>
+      <div class="tile" style="height:24mm;background:#fff;border:1px solid #eadfcb;" data-logo="1" data-layout="row" data-c="#000" data-a="#000" data-s="11"></div>
+    </div>
+    <p class="muted" style="font-size:7.5pt;margin-top:2mm;">Approved versions: reversed on green, full colour on beige, single colour on gold, and black for newspapers and fax.</p>
+  </div>
+  <div class="folio"><span>Logo usage</span><span>14</span></div>
+</section>
+
+<!-- 15 VISITING CARDS -->
+<section class="page" style="background:radial-gradient(ellipse at 40% 30%,#f6eee0 0%,#e4d6bd 60%,#cfbe9f 100%);">
+  <div class="pad">
+    <p class="eyebrow">10 · Applications — Visiting cards</p>
+    <h2>Three cards, <em>bilingual.</em></h2>
+    <p style="margin-top:2mm;max-width:160mm;" class="muted">Front in wealthy green with the lattice in tonal varnish and the emblem in gold foil. Back in pearl ivory, English on the left and Arabic on the right. 90 × 54 mm, 600 gsm cotton board, gilt edges.</p>
+  </div>
+  <div id="cards" style="position:absolute;left:18mm;right:18mm;top:62mm;bottom:20mm;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8mm;"></div>
+  <div class="folio"><span>Visiting cards</span><span>15</span></div>
+</section>
+
+<!-- 16 STATIONERY -->
+<section class="page" style="background:url(../public/images/material-linen.jpg) center/cover;">
+  <div style="position:absolute;inset:0;background:rgba(234,223,203,.45);"></div>
+  <div class="card-shadow" style="position:absolute;left:22mm;top:18mm;width:105mm;height:150mm;background:var(--ivory);transform:rotate(-3deg);padding:10mm;display:flex;flex-direction:column;overflow:hidden;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+      <div data-logo="1" data-layout="row" data-c="#0b2e27" data-a="#b8862b" data-s="10"></div>
+    </div>
+    <div style="margin-top:12mm;font-size:6pt;line-height:1.7;color:var(--ash)">6 November 2026<br /><br />Mr and Mrs Al Mansoori<br />Villa 14, Dubai Hills Estate</div>
+    <p style="font-family:'Cormorant Garamond';font-size:12pt;margin-top:6mm;">Your majlis proposal</p>
+    <div style="margin-top:3mm;display:flex;flex-direction:column;gap:1.6mm;">
+      <div style="height:1.2mm;background:#e7dfd1;width:100%"></div><div style="height:1.2mm;background:#e7dfd1;width:94%"></div><div style="height:1.2mm;background:#e7dfd1;width:98%"></div><div style="height:1.2mm;background:#e7dfd1;width:70%"></div>
+      <div style="height:1.2mm;background:#e7dfd1;width:100%;margin-top:3mm"></div><div style="height:1.2mm;background:#e7dfd1;width:90%"></div><div style="height:1.2mm;background:#e7dfd1;width:60%"></div>
+    </div>
+    <p style="font-family:'Pinyon Script';font-size:16pt;margin-top:8mm;color:var(--emerald)">Jyoti Joshi</p>
+    <div style="margin-top:auto;position:relative;height:9mm;margin-left:-10mm;margin-right:-10mm;margin-bottom:-10mm;background:var(--emerald);overflow:hidden;">
+      <svg class="pat" style="opacity:.35"><rect width="100%" height="100%" fill="url(#bp-fine)" /></svg>
+      <div style="position:relative;display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 10mm;font-size:5pt;letter-spacing:.18em;text-transform:uppercase;color:var(--champagne)"><span>opulentliving.ae</span><span>+971 50 000 0000</span><span class="ar-text" style="letter-spacing:0;font-size:6.5pt">دبي، الإمارات</span></div>
+    </div>
+  </div>
+  <div class="card-shadow" style="position:absolute;left:118mm;top:104mm;width:120mm;height:62mm;background:var(--emerald);transform:rotate(4deg);overflow:hidden;">
+    <svg class="pat" style="opacity:.12"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+    <svg viewBox="0 0 120 62" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M0 0 L60 34 L120 0" fill="none" stroke="rgba(0,0,0,.3)" stroke-width=".6" /></svg>
+    <div class="foil-bg card-shadow" style="position:absolute;left:50%;top:34mm;transform:translate(-50%,-50%);width:17mm;height:17mm;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span data-logo="1" data-layout="mark" data-c="#3a2a0c" data-a="#4a3812" data-s="6" data-bg="#d8b663"></span></div>
+  </div>
+  <div class="card-shadow" style="position:absolute;left:180mm;top:26mm;width:90mm;height:54mm;background:var(--emerald);transform:rotate(-8deg);overflow:hidden;">
+    <svg class="pat" style="opacity:.12"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+    <div class="tile" style="position:absolute;inset:0" data-logo="1" data-layout="stack" data-c="#fbf7f0" data-a="url(#foil)" data-s="10.5" data-bg="#0f4d3f"></div>
+  </div>
+  <div class="card-shadow" style="position:absolute;left:190mm;top:60mm;width:90mm;height:54mm;background:var(--ivory);transform:rotate(6deg);padding:6mm 7mm;" data-backcard="1"></div>
+  <div class="folio" style="color:var(--pine)"><span>Stationery · Concept 01</span><span>16</span></div>
+</section>
+
+<!-- 17 HOARDING -->
+<section class="page" style="background:#cfc3ae;">
+  <img src="../public/images/story-dawn.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;" alt="" />
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,240,210,0) 40%,rgba(80,60,30,.25) 100%);"></div>
+  <div style="position:absolute;left:24mm;top:24mm;width:250mm;height:105mm;perspective:1400px;">
+    <div style="position:absolute;inset:0;transform:rotateY(-9deg);transform-origin:left center;">
+      <div style="position:absolute;top:-9mm;left:0;right:0;display:flex;justify-content:space-around;">
+        <span style="width:12mm;height:3mm;background:#2c2c2c;border-radius:1mm"></span><span style="width:12mm;height:3mm;background:#2c2c2c;border-radius:1mm"></span><span style="width:12mm;height:3mm;background:#2c2c2c;border-radius:1mm"></span><span style="width:12mm;height:3mm;background:#2c2c2c;border-radius:1mm"></span>
+      </div>
+      <div style="position:absolute;top:-7mm;left:0;right:0;display:flex;justify-content:space-around;">
+        <span style="width:2mm;height:7mm;background:#3b3b3b"></span><span style="width:2mm;height:7mm;background:#3b3b3b"></span><span style="width:2mm;height:7mm;background:#3b3b3b"></span><span style="width:2mm;height:7mm;background:#3b3b3b"></span>
+      </div>
+      <div style="position:absolute;top:100%;left:22%;width:5mm;height:80mm;background:linear-gradient(90deg,#4a4a4a,#7a7a7a,#3a3a3a)"></div>
+      <div style="position:absolute;top:100%;left:74%;width:5mm;height:80mm;background:linear-gradient(90deg,#4a4a4a,#7a7a7a,#3a3a3a)"></div>
+      <div class="card-shadow" style="position:absolute;inset:0;border:2.5mm solid #2b2b2b;background:var(--emerald);display:grid;grid-template-columns:1.2fr 1fr;overflow:hidden;">
+        <div style="padding:8mm 10mm;display:flex;flex-direction:column;justify-content:space-between;position:relative;">
+          <svg class="pat" style="opacity:.08"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+          <div style="position:relative" data-logo="1" data-layout="row" data-c="#fbf7f0" data-a="url(#foil)" data-s="12" data-bg="#0f4d3f"></div>
+          <div style="position:relative;">
+            <p style="font-family:'Cormorant Garamond';font-weight:300;font-size:32pt;line-height:1;color:var(--ivory)">Opulence, <em class="foil-text" style="font-style:italic">within reach.</em></p>
+            <p class="ar-text foil-text" style="font-family:'Aref Ruqaa';font-size:24pt;margin-top:2mm;text-align:left;">الفخامة في متناول يدك</p>
+            <p style="margin-top:2mm;font-size:8.5pt;color:#c9dbd2;">Luxury interiors for villas, majlis, and apartments · Dubai</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:5mm;position:relative;">
+            <span class="foil-bg" style="color:var(--pine);font-size:7pt;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:2.6mm 4mm;">Book a consultation · احجز استشارة</span>
+            <span style="color:var(--ivory);font-size:9.5pt;letter-spacing:.06em;">+971 50 000 0000</span>
+          </div>
+        </div>
+        <div style="position:relative;border-left:1.2mm solid #c9a23f;">
+          <img src="../public/images/story-majlis.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;left:18mm;bottom:12mm;background:rgba(11,46,39,.85);color:var(--ivory);padding:4mm 6mm;max-width:130mm;">
+    <p class="eyebrow">11 · Applications — Roadside hoarding</p>
+    <p style="margin-top:2mm;font-size:8.5pt;">Sheikh Zayed Road hoarding, 12 × 4 m. One bilingual headline, one image, one call to action: readable at speed in under three seconds.</p>
+  </div>
+</section>
+
+<!-- 18 STUDIO + SOCIAL -->
+<section class="page stone">
+  <div class="pad" style="display:grid;grid-template-columns:1fr 1.25fr;grid-template-rows:auto 1fr;gap:6mm 8mm;">
+    <div style="grid-column:span 2;"><p class="eyebrow">12 · Applications — Studio and social</p><h2>The brand in the <em>world.</em></h2></div>
+    <div style="position:relative;overflow:hidden;background:url(../public/images/material-travertine.jpg) center/cover;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 45% 30% at 50% 50%,rgba(246,236,214,.72),rgba(246,236,214,0) 100%),radial-gradient(ellipse at 50% 30%,rgba(255,236,200,.3),rgba(60,45,25,.4));"></div>
+      <div class="tile" style="position:absolute;inset:0;filter:drop-shadow(0 .25mm 0 #2e2108) drop-shadow(.6mm 1mm .6mm rgba(40,28,10,.55));" data-logo="1" data-layout="stack" data-c="#9a6f1f" data-a="#b8892e" data-s="22" data-bg="#d9c7a6"></div>
+      <p style="position:absolute;left:4mm;bottom:3mm;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.6)">Reception wall · brushed brass on travertine</p>
+    </div>
+    <div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm;">
+        <div style="aspect-ratio:1;background:var(--emerald);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3mm;text-align:center;position:relative;overflow:hidden;">
+          <svg class="pat" style="opacity:.1"><rect width="100%" height="100%" fill="url(#bp-fine)" /></svg>
+          <p class="ar-text foil-text" style="font-family:'Aref Ruqaa';font-size:15pt;position:relative">بيتك مجلسك</p>
+          <p style="font-family:'Cormorant Garamond';font-size:9pt;color:var(--ivory);line-height:1.25;position:relative;margin-top:1mm">Your home is your majlis.</p>
+        </div>
+        <div style="aspect-ratio:1;position:relative;overflow:hidden;">
+          <img src="../public/images/project-court-house.jpg" style="width:100%;height:100%;object-fit:cover" alt="" />
+          <div style="position:absolute;left:2mm;bottom:2mm;" data-logo="1" data-layout="mark" data-c="#fbf7f0" data-a="url(#foil)" data-s="6" data-bg="#2a2018"></div>
+        </div>
+        <div style="aspect-ratio:1;background:var(--ivory);display:flex;flex-direction:column;justify-content:center;padding:3.5mm;">
+          <p style="font-size:5pt;letter-spacing:.24em;color:var(--gold);font-weight:500">BEFORE · AFTER</p>
+          <p style="font-family:'Cormorant Garamond';font-size:12pt;line-height:1.05;margin-top:1.5mm">A family majlis in <em style="color:var(--gold)">10 weeks.</em></p>
+          <p style="font-size:5pt;margin-top:2mm;color:var(--ash)">Swipe to see →</p>
+        </div>
+        <div style="aspect-ratio:1;position:relative;overflow:hidden;">
+          <img src="../public/images/story-craft.jpg" style="width:100%;height:100%;object-fit:cover" alt="" />
+          <p style="position:absolute;left:2mm;bottom:2mm;font-family:'Cormorant Garamond';font-style:italic;font-size:9pt;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)">Carved by hand.</p>
+        </div>
+        <div class="tile" style="aspect-ratio:1;background:var(--pine);" data-logo="1" data-layout="mark" data-c="#fbf7f0" data-a="url(#foil)" data-s="13"></div>
+        <div style="aspect-ratio:1;position:relative;overflow:hidden;">
+          <img src="../public/images/sector-penthouses.jpg" style="width:100%;height:100%;object-fit:cover" alt="" />
+        </div>
+      </div>
+      <p class="muted" style="font-size:7.5pt;margin-top:3mm;">Instagram grid: alternate a project photo, an Arabic-English line on green, and a light editorial tile. Post captions in both languages.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Applications</span><span>18</span></div>
+</section>
+
+<!-- 19 STREET BANNERS + GIFT BOX -->
+<section class="page" style="background:#d9cdb8;">
+  <img src="../public/images/story-heritage.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" alt="" />
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,46,39,.88) 0%,rgba(11,46,39,.6) 35%,rgba(11,46,39,0) 52%);"></div>
+  <div style="position:absolute;left:150mm;top:14mm;bottom:0;width:120mm;display:flex;justify-content:space-between;">
+    <div style="position:relative;width:46mm;">
+      <div style="position:absolute;left:4mm;top:0;bottom:0;width:3mm;background:linear-gradient(90deg,#2d2d2d,#6c6c6c,#2d2d2d)"></div>
+      <div class="card-shadow" style="position:absolute;left:7mm;top:14mm;width:36mm;height:100mm;background:var(--emerald);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:7mm 3mm;overflow:hidden;">
+        <svg class="pat" style="opacity:.12"><rect width="100%" height="100%" fill="url(#bp-fine)" /></svg>
+        <span style="position:relative" data-logo="1" data-layout="mark" data-c="#fbf7f0" data-a="url(#foil)" data-s="13"></span>
+        <div style="position:relative;text-align:center">
+          <p style="font-family:'Cormorant Garamond';font-size:15pt;line-height:1.05;color:var(--ivory);">Live<br /><em class="foil-text">grandly.</em></p>
+          <p class="ar-text foil-text" style="font-family:'Aref Ruqaa';font-size:13pt;margin-top:1mm">عِش بفخامة</p>
+        </div>
+        <p style="font-size:5pt;letter-spacing:.3em;color:var(--champagne);position:relative">OPULENTLIVING.AE</p>
+      </div>
+    </div>
+    <div style="position:relative;width:46mm;">
+      <div style="position:absolute;left:4mm;top:0;bottom:0;width:3mm;background:linear-gradient(90deg,#2d2d2d,#6c6c6c,#2d2d2d)"></div>
+      <div class="card-shadow" style="position:absolute;left:7mm;top:14mm;width:36mm;height:100mm;background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:7mm 3mm;">
+        <span data-logo="1" data-layout="mark" data-c="#0b2e27" data-a="#b8862b" data-s="13"></span>
+        <div style="text-align:center">
+          <p style="font-family:'Cormorant Garamond';font-size:14pt;line-height:1.05;color:var(--pine);">Opulence,<br /><em style="color:var(--gold)">within reach.</em></p>
+          <p class="ar-text" style="font-family:'Aref Ruqaa';font-size:12pt;margin-top:1mm;color:var(--gold)">الفخامة في متناول يدك</p>
+        </div>
+        <p style="font-size:5pt;letter-spacing:.3em;color:var(--gold)">BOOK A CONSULTATION</p>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;left:18mm;top:16mm;max-width:115mm;color:var(--ivory);">
+    <p class="eyebrow">13 · Applications — Street banners</p>
+    <h2 style="font-size:30pt;">Lamp-post banners, <em>in pairs.</em></h2>
+    <p style="margin-top:4mm;font-size:9pt;color:#e6efe9;">Alternate green and ivory down a street so the brand reads as a rhythm. One bilingual line, the gate emblem, and the web address.</p>
+  </div>
+  <div class="card-shadow" style="position:absolute;left:24mm;bottom:22mm;width:62mm;height:44mm;background:var(--pine);overflow:hidden;">
+    <svg class="pat" style="opacity:.55"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+    <div style="position:absolute;inset:0;margin:auto;width:24mm;height:100%;background:var(--emerald);border-left:.6mm solid #c9a23f;border-right:.6mm solid #c9a23f;"></div>
+    <div class="tile" style="position:absolute;inset:0;" data-logo="1" data-layout="mark" data-c="#fbf7f0" data-a="url(#foil)" data-s="12" data-bg="#0f4d3f"></div>
+  </div>
+  <p style="position:absolute;left:24mm;bottom:15mm;font-size:6.5pt;letter-spacing:.24em;text-transform:uppercase;color:#e6efe9">Gift box for handover keys · foil lattice wrap</p>
+  <div class="folio" style="color:#fff"><span>Street banners</span><span>19</span></div>
+</section>
+
+<!-- 20 BACK COVER -->
+<section class="page green">
+  <svg class="pat" style="opacity:.1"><rect width="100%" height="100%" fill="url(#bp)" /></svg>
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 46%,rgba(15,77,63,1) 0%,rgba(15,77,63,.92) 30%,rgba(15,77,63,.2) 70%);"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9mm;">
+    <span data-logo="1" data-layout="stack" data-c="#fbf7f0" data-a="url(#foil)" data-s="34" data-sub="1"></span>
+  </div>
+  <div class="folio" style="justify-content:center;gap:12mm;"><span>Founded by Jyoti Joshi</span><span>Dubai, United Arab Emirates</span><span>opulentliving.ae</span></div>
+</section>
+
+<script>
+  const FOIL = "url(#foil)";
+  const AR = "أوبيولنت ليفينغ";
+  let uid = 0;
+  const f = (n) => n.toFixed(2);
+  const pt = (cx, cy, r, deg) => { const t = (deg * Math.PI) / 180; return [cx + r * Math.cos(t), cy + r * Math.sin(t)]; };
+  const latticeG = (col, sw) => `<g fill="none" stroke="${col}" stroke-width="${sw}"><path d="M20 6L34 20L20 34L6 20Z"/><path d="M10.1 10.1H29.9V29.9H10.1Z"/><path d="M10.1 10.1L0 0M29.9 10.1L40 0M29.9 29.9L40 40M10.1 29.9L0 40M20 6V0M34 20H40M20 34V40M6 20H0"/></g>`;
+
+  function markA(c, a, bg, plain) {
+    const id = "a" + ++uid;
+    const outer = "M28 236V108C28 74 52 64 72 52C88 42 97 30 100 12C103 30 112 42 128 52C148 64 172 74 172 108V236";
+    const inner = "M40 236V112C40 84 60 75 78 64C91 56 98 45 100 30C102 45 109 56 122 64C140 75 160 84 160 112V236";
+    const S = 15;
+    return `<svg class="mk" viewBox="0 0 200 250" aria-hidden="true">
+      <defs>
+        <pattern id="${id}p" width="${S}" height="${S}" patternUnits="userSpaceOnUse" x="2.5" y="0"><g transform="scale(${S / 40})">${latticeG(a, 1.5)}</g></pattern>
+        <clipPath id="${id}c"><path d="${inner}Z"/></clipPath>
+      </defs>
+      ${plain ? "" : `<rect width="200" height="250" fill="url(#${id}p)" clip-path="url(#${id}c)" opacity=".85"/>`}
+      <path d="${outer}" fill="none" stroke="${a}" stroke-width="3.4"/>
+      <path d="${inner}" fill="none" stroke="${a}" stroke-width="1.3"/>
+      <rect x="20" y="106.5" width="22" height="3" fill="${a}"/><rect x="158" y="106.5" width="22" height="3" fill="${a}"/>
+      <rect x="22" y="113.5" width="18" height="1" fill="${a}"/><rect x="160" y="113.5" width="18" height="1" fill="${a}"/>
+      <rect x="12" y="234.3" width="176" height="3.4" fill="${a}"/>
+      <rect x="4" y="244.3" width="192" height="1.4" fill="${a}"/>
+      <circle cx="100" cy="4.5" r="4" fill="${a}"/>
+      ${plain ? "" : `<circle cx="100" cy="162" r="38" fill="${bg}" stroke="${a}" stroke-width="2.6"/>
+      <circle cx="100" cy="162" r="32.5" fill="none" stroke="${a}" stroke-width=".9"/>
+      <path d="M100 120l3 4-3 4-3-4z M100 196l3 4-3 4-3-4z" fill="${a}"/>
+      <text x="100" y="174.5" text-anchor="middle" font-family="Cormorant Garamond" font-weight="600" font-size="36" letter-spacing="-3" fill="${c}">OL</text>`}
+    </svg>`;
+  }
+
+  function frond(a) {
+    let out = "";
+    for (let th = 104; th <= 250; th += 6.5) {
+      const k = (th - 104) / 146;
+      const L = 25 - 12 * k, w = 3.4 - 1.3 * k;
+      const [x, y] = pt(100, 118, 54, th);
+      out += `<path transform="translate(${f(x)} ${f(y)}) rotate(${f(th + 36)})" d="M0 0Q${f(L * 0.5)} ${f(-w)} ${f(L)} 0Q${f(L * 0.5)} ${f(w)} 0 0Z" fill="${a}"/>`;
+      const L2 = L * 0.42;
+      out += `<path transform="translate(${f(x)} ${f(y)}) rotate(${f(th + 148)})" d="M0 0Q${f(L2 * 0.5)} ${f(-w * 0.7)} ${f(L2)} 0Q${f(L2 * 0.5)} ${f(w * 0.7)} 0 0Z" fill="${a}"/>`;
+    }
+    const [x0, y0] = pt(100, 118, 54, 98), [x1, y1] = pt(100, 118, 54, 254);
+    return `<path d="M${f(x0)} ${f(y0)}A54 54 0 0 1 ${f(x1)} ${f(y1)}" fill="none" stroke="${a}" stroke-width="1.8"/>
+      <path d="M${f(x0)} ${f(y0)}Q101 182 114 194" fill="none" stroke="${a}" stroke-width="1.8"/>${out}`;
+  }
+  function markB(c, a, bg) {
+    return `<svg class="mk" viewBox="16 26 168 178" aria-hidden="true">
+      ${frond(a)}
+      <g transform="translate(200 0) scale(-1 1)">${frond(a)}</g>
+      <path d="M100 176l5 6-5 6-5-6z" fill="${a}"/>
+      <path d="M78 66Q100 56 122 66" fill="none" stroke="${a}" stroke-width="1.6"/>
+      <path d="M84 56l4.5-6 4.5 6-4.5 6z M100 52l-6-8 6-14 6 14z M107 56l4.5-6 4.5 6-4.5 6z" fill="${a}"/>
+      <circle cx="100" cy="27" r="2.6" fill="${a}"/>
+      <circle cx="100" cy="118" r="41" fill="${bg}" stroke="${a}" stroke-width="2.6"/>
+      <circle cx="100" cy="118" r="35.5" fill="none" stroke="${a}" stroke-width=".9"/>
+      <text x="100" y="129" text-anchor="middle" font-family="Cinzel" font-weight="600" font-size="29" letter-spacing="1" fill="${c}">OL</text>
+    </svg>`;
+  }
+
+  function markC(c, a, bg) {
+    let beads = "";
+    for (let i = 0; i < 56; i++) { const [x, y] = pt(100, 100, 92.5, i * (360 / 56)); beads += `<circle cx="${f(x)}" cy="${f(y)}" r="1.35" fill="${a}"/>`; }
+    const P = (r, i, off = 0) => pt(100, 100, r, i * 45 - 90 + off);
+    let star = "";
+    for (let i = 0; i <= 8; i++) { const [x, y] = P(82, (i * 3) % 8); star += (i ? "L" : "M") + f(x) + " " + f(y); }
+    let sq = "";
+    for (let k = 0; k < 2; k++) { for (let j = 0; j <= 4; j++) { const [x, y] = P(82, (2 * j + k) % 8); sq += (j ? "L" : "M") + f(x) + " " + f(y); } }
+    let petals = "", gems = "";
+    for (let i = 0; i < 8; i++) {
+      petals += `<path transform="rotate(${i * 45} 100 100)" d="M100 56Q111 45 100 33Q89 45 100 56Z" fill="${a}" opacity=".9"/>`;
+      const [x, y] = P(85, i, 22.5);
+      gems += `<path transform="translate(${f(x)} ${f(y)}) rotate(${i * 45 + 22.5})" d="M0 -4L2.6 0 0 4-2.6 0Z" fill="${a}"/>`;
+    }
+    return `<svg class="mk" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="98" fill="none" stroke="${a}" stroke-width="2.4"/>
+      <circle cx="100" cy="100" r="88" fill="none" stroke="${a}" stroke-width="1"/>
+      ${beads}
+      <path d="${sq}" fill="none" stroke="${a}" stroke-width=".8" opacity=".75"/>
+      <path d="${star}" fill="none" stroke="${a}" stroke-width="1.8" stroke-linejoin="round"/>
+      ${gems}${petals}
+      <circle cx="100" cy="100" r="38" fill="${bg}" stroke="${a}" stroke-width="2.4"/>
+      <circle cx="100" cy="100" r="33" fill="none" stroke="${a}" stroke-width=".9"/>
+      <text x="100" y="112" text-anchor="middle" font-family="Cormorant Garamond" font-weight="600" font-size="34" letter-spacing="-2" fill="${c}">OL</text>
+    </svg>`;
+  }
+
+  const orn = (a) => `<svg class="orn" viewBox="0 0 130 14" aria-hidden="true"><rect x="2" y="6.4" width="50" height="1.2" fill="${a}"/><rect x="78" y="6.4" width="50" height="1.2" fill="${a}"/><path d="M65 1l6 6-6 6-6-6z" fill="${a}"/><circle cx="56" cy="7" r="1.6" fill="${a}"/><circle cx="74" cy="7" r="1.6" fill="${a}"/></svg>`;
+  const cls = (v) => (v === FOIL ? "foil-text" : "");
+  const sty = (v) => (v === FOIL ? "" : `color:${v}`);
+
+  function logo(n, layout, c, a, s, sub, bg, plain) {
+    const mkC = c === FOIL ? FOIL : c;
+    const mk = n === 1 ? markA(mkC, a, bg, plain) : n === 2 ? markB(mkC, a, bg) : markC(mkC, a, bg);
+    const k = ["", "A", "B", "C"][n];
+    if (layout === "mark") return `<span class="lg lg${k} stack" style="font-size:${s}px">${mk}</span>`;
+    const subLine = sub ? `<span class="w3 ${cls(c)}" style="${sty(c)}">DESIGN SERVICES · DUBAI</span>` : "";
+    const smallAr = n === 1 && s < 29 ? "font-family:Amiri,serif;font-size:.5em;" : "";
+    const ar = `<span class="ar ${cls(a)}" style="${smallAr}${sty(a)}">${AR}</span>`;
+    let words;
+    if (n === 1) words = `<span class="w1 ${cls(c)}" style="${sty(c)}">OPULENT LIVING</span>${orn(a)}${ar}`;
+    else if (n === 2) words = `<span class="w1 ${cls(c)}" style="${sty(c)}">OPULENT</span><span class="w2 ${cls(a)}" style="${sty(a)}">LIVING</span>${ar}`;
+    else words = `<span class="w1 ${cls(c)}" style="${sty(c)}">OPULENT LIVING</span>${ar}`;
+    return `<span class="lg lg${k} ${layout}" style="font-size:${s}px">${mk}<span class="txt">${words}${subLine}</span></span>`;
+  }
+
+  function bgOf(el) {
+    for (let n = el; n && n !== document.body; n = n.parentElement) {
+      const cs = getComputedStyle(n);
+      if (cs.backgroundColor && cs.backgroundColor !== "rgba(0, 0, 0, 0)" && cs.backgroundColor !== "transparent") return cs.backgroundColor;
+      if (cs.backgroundImage && cs.backgroundImage !== "none") return "#c9a23f";
+    }
+    return "#fbf7f0";
+  }
+
+  document.querySelectorAll("[data-logo]").forEach((el) => {
+    const d = el.dataset;
+    el.innerHTML = logo(+d.logo, d.layout, d.c, d.a, +d.s * 1.333, d.sub === "1", d.bg || bgOf(el), d.plain === "1");
+  });
+
+  function backCard(n) {
+    const nameFont = n === 3 ? "font-family:'Jost';font-weight:300;font-size:11pt;letter-spacing:.16em;text-transform:uppercase" : n === 2 ? "font-family:'Cinzel';font-size:12pt;letter-spacing:.08em" : "font-family:'Cormorant Garamond';font-size:16pt;font-weight:500";
+    const arFont = n === 3 ? "Reem Kufi" : n === 2 ? "Amiri" : "Aref Ruqaa";
+    return `<div style="display:flex;flex-direction:column;height:100%;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:2mm;white-space:nowrap;">
+        <div><p style="${nameFont};color:var(--pine);line-height:1.1">Jyoti Joshi</p>
+        <p style="font-size:4.6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:1.5mm;font-weight:500">Founder · Principal designer</p></div>
+        <div style="text-align:right"><p class="ar-text" style="font-family:'${arFont}';font-size:13pt;color:var(--pine);line-height:1.15">جيوتي جوشي</p>
+        <p class="ar-text" style="font-size:6.5pt;color:var(--gold);margin-top:.5mm">المؤسِّسة والمصممة الرئيسية</p></div>
+      </div>
+      <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;white-space:nowrap;">
+        <div style="font-size:5.6pt;line-height:1.75;color:var(--pine)">+971 50 000 0000<br/>jyoti@opulentliving.ae<br/>opulentliving.ae</div>
+        <span>${logo(n, "mark", "#0f4d3f", "#b8862b", 6.5, false, "#fbf7f0")}</span>
+        <div class="ar-text" style="font-size:7pt;line-height:1.75;color:var(--pine);text-align:right">دبي<br/>الإمارات العربية المتحدة</div>
+      </div>
+      <div style="height:.6mm;margin-top:2.5mm;background:var(--foil)"></div>
+    </div>`;
+  }
+  document.querySelectorAll("[data-backcard]").forEach((el) => { el.innerHTML = backCard(+el.dataset.backcard); });
+
+  const cards = document.getElementById("cards");
+  [1, 2, 3].forEach((n, i) => {
+    const front = n === 2 ? "#0b2e27" : "#0f4d3f";
+    cards.insertAdjacentHTML("beforeend", `
+      <div style="position:relative;">
+        <div class="card-shadow" style="position:absolute;left:0;top:0;width:76mm;height:45.6mm;background:${front};transform:rotate(${[-6, 4, -3][i]}deg);overflow:hidden;">
+          <svg class="pat" style="opacity:.1"><rect width="100%" height="100%" fill="url(#bp-fine)"/></svg>
+          <div class="tile" style="position:absolute;inset:0">${logo(n, "stack", "#fbf7f0", FOIL, 10.5 * 1.333, false, front)}</div>
+        </div>
+        <div class="card-shadow" style="position:absolute;left:4mm;top:52mm;width:76mm;height:45.6mm;background:var(--ivory);transform:rotate(${[3, -4, 5][i]}deg);padding:4.5mm 5mm;">${backCard(n)}</div>
+        <p style="position:absolute;left:0;bottom:-2mm;font-size:7pt;letter-spacing:.24em;text-transform:uppercase;color:var(--pine);font-weight:500">Concept 0${n}</p>
+      </div>`);
+  });
+</script>
+</body>
+</html>
