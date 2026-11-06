@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Lattice } from "@/components/brand/Lattice";
 import { testimonial, testimonials } from "@/content/home";
@@ -51,13 +51,24 @@ export function Voices() {
             <AnimatePresence mode="wait">
               <motion.figure
                 key={t.name}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
                 <blockquote className="font-display text-2xl leading-snug font-light text-beige sm:text-3xl lg:text-4xl">
-                  “{t.quote}”
+                  {`“${t.quote}”`.split(" ").map((word, w) => (
+                    <Fragment key={w}>
+                      <motion.span
+                        className="inline-block"
+                        initial={{ opacity: 0, y: "0.4em", filter: "blur(6px)" }}
+                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.6, delay: w * 0.035, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        {word}
+                      </motion.span>{" "}
+                    </Fragment>
+                  ))}
                 </blockquote>
                 <figcaption className="mt-8 flex items-center gap-4">
                   <span className="h-px w-10 bg-brass" aria-hidden="true" />

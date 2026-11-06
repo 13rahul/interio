@@ -2,7 +2,7 @@ import { Closing } from "@/components/site/home/Closing";
 import { DoorsIntro } from "@/components/site/home/DoorsIntro";
 import { Faq } from "@/components/site/home/Faq";
 import { Gallery } from "@/components/site/home/Gallery";
-import { HeroArch } from "@/components/site/home/HeroArch";
+import { HeroStory } from "@/components/site/home/HeroStory";
 import { Journey } from "@/components/site/home/Journey";
 import { Marquee } from "@/components/site/home/Marquee";
 import { Materials } from "@/components/site/home/Materials";
@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       <DoorsIntro />
-      <HeroArch />
+      <HeroStory />
       <Marquee />
       <Welcome />
       <Services />

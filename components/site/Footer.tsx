@@ -3,6 +3,7 @@ import { Lattice } from "@/components/brand/Lattice";
 import { sectors } from "@/content/home";
 import { consultationLabel, nav, site } from "@/content/site";
 import { Logo } from "./Logo";
+import { ScrollRise } from "./ScrollRise";
 
 const linkClass = "inline-flex h-10 items-center text-beige/85 transition-colors hover:text-gold";
 
@@ -73,6 +74,7 @@ export function Footer() {
         </nav>
       </div>
       <div className="relative mx-auto mt-20 max-w-7xl px-6 lg:px-10" aria-hidden="true">
+        <ScrollRise>
         <svg viewBox="0 0 1000 118" className="block w-full select-none">
           <defs>
             <linearGradient id="footer-foil" x1="0" y1="0" x2="1000" y2="118" gradientUnits="userSpaceOnUse">
@@ -96,6 +98,7 @@ export function Footer() {
             OPULENT LIVING
           </text>
         </svg>
+        </ScrollRise>
       </div>
       <div className="relative mx-auto mt-8 flex max-w-7xl flex-wrap justify-between gap-4 border-t border-graphite px-6 pt-6 text-xs text-ash lg:px-10">
         <p>

@@ -1,15 +1,52 @@
+"use client";
+
 import Link from "next/link";
+import { useRef } from "react";
 import { GateMark } from "@/components/brand/GateMark";
 import { Lattice } from "@/components/brand/Lattice";
 import { packages } from "@/content/home";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { FadeUp } from "../Reveal";
+import { gsap, media, useGSAP } from "@/lib/gsap";
 import { SectionHeading } from "./parts";
 
 export function Packages() {
+  const ref = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add({ desktop: "(min-width: 1024px)", motion: media.motion }, (ctx) => {
+        if (!ctx.conditions?.motion) return;
+        const cards = gsap.utils.toArray<HTMLElement>(".pk-card", ref.current);
+        if (ctx.conditions.desktop) {
+          gsap.from(cards, {
+            xPercent: (i) => (i - 1) * -100,
+            yPercent: (i) => (i === 1 ? 6 : 14),
+            rotate: (i) => (i - 1) * 7,
+            scale: (i) => (i === 1 ? 0.94 : 0.88),
+            ease: "none",
+            scrollTrigger: { trigger: ".pk-grid", start: "top 90%", end: "top 30%", scrub: 0.8 },
+          });
+        } else {
+          cards.forEach((card) =>
+            gsap.from(card, {
+              y: 60,
+              opacity: 0,
+              rotate: 2,
+              duration: 1,
+              ease: "power3.out",
+              scrollTrigger: { trigger: card, start: "top 88%", once: true },
+            }),
+          );
+        }
+      });
+    },
+    { scope: ref },
+  );
+
   return (
-    <section className="theme-stone relative overflow-hidden py-24 lg:py-36" id="packages">
+    <section ref={ref} className="theme-stone relative overflow-hidden py-24 lg:py-36" id="packages">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading align="center" eyebrow="Affordable luxury" title="Five-star rooms," accent="honest prices." className="max-w-3xl">
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ash">
@@ -17,9 +54,9 @@ export function Packages() {
           </p>
         </SectionHeading>
 
-        <div className="mt-16 grid items-stretch gap-6 lg:grid-cols-3">
-          {packages.map((p, i) => (
-            <FadeUp key={p.name} delay={i * 0.1} className="h-full">
+        <div className="pk-grid mt-16 grid items-stretch gap-6 lg:grid-cols-3">
+          {packages.map((p) => (
+            <div key={p.name} className={cn("pk-card h-full", p.featured && "relative z-10")}>
               <article
                 className={cn(
                   "group relative flex h-full flex-col overflow-hidden p-8 transition-transform duration-500 ease-lux hover:-translate-y-2 lg:p-10",
@@ -72,7 +109,7 @@ export function Packages() {
                   </Button>
                 </div>
               </article>
-            </FadeUp>
+            </div>
           ))}
         </div>
         <p className="mt-12 text-center text-xs text-ash">

@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Ornament } from "@/components/brand/GateMark";
 import { credentials, stats, welcome } from "@/content/home";
 import { site } from "@/content/site";
+import { gsap, media, SplitText, useGSAP } from "@/lib/gsap";
 import { FadeUp, Reveal } from "../Reveal";
 import { Arrow, CountUp, SectionHeading } from "./parts";
 
@@ -15,6 +16,32 @@ export function Welcome() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const bigY = useTransform(scrollYProgress, [0, 1], ["6%", "-6%"]);
   const smallY = useTransform(scrollYProgress, [0, 1], ["30%", "-30%"]);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(media.motion, () => {
+        const split = SplitText.create(".wl-quote", { type: "words" });
+        gsap.fromTo(
+          split.words,
+          { opacity: 0.18 },
+          {
+            opacity: 1,
+            stagger: 0.1,
+            ease: "none",
+            scrollTrigger: { trigger: ".wl-quote", start: "top 85%", end: "bottom 45%", scrub: true },
+          },
+        );
+        gsap.from(".wl-figure", {
+          clipPath: "inset(0 100% 0 0)",
+          duration: 1.4,
+          ease: "power3.inOut",
+          scrollTrigger: { trigger: ".wl-figure", start: "top 85%", once: true },
+        });
+      });
+    },
+    { scope: ref },
+  );
 
   return (
     <section ref={ref} id="welcome" className="theme-linen relative overflow-hidden py-24 lg:py-36">
@@ -50,16 +77,16 @@ export function Welcome() {
             <p className="mt-6 text-base leading-relaxed text-ash sm:text-lg">{welcome.body}</p>
           </SectionHeading>
 
-          <FadeUp delay={0.1}>
-            <figure className="mt-10 border-l-2 border-brass bg-pearl py-6 pr-6 pl-7">
-              <blockquote className="font-display text-2xl leading-snug text-beige italic">
+          <div>
+            <figure className="wl-figure mt-10 border-l-2 border-brass bg-pearl py-6 pr-6 pl-7">
+              <blockquote className="wl-quote font-display text-2xl leading-snug text-beige italic">
                 “{welcome.founderNote}”
               </blockquote>
               <figcaption className="mt-4 text-xs font-medium tracking-brand text-gold uppercase">
                 {site.founder} · <span className="text-ash">{welcome.founderRole}</span>
               </figcaption>
             </figure>
-          </FadeUp>
+          </div>
 
           <FadeUp delay={0.15}>
             <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-3">

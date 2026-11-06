@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { FadeUp, Reveal } from "../Reveal";
 import { Arrow, SectionHeading } from "./parts";
+import { ProjectsMotion } from "./ProjectsMotion";
 
 const layout = [
   { col: "lg:col-span-7", ratio: "aspect-[4/3]", arch: false },
@@ -20,14 +21,16 @@ function Card({ project, index }: { project: Project; index: number }) {
   const l = layout[index % layout.length];
   const body = (
     <>
-      <Reveal className={cn("relative bg-sand", l.ratio, l.arch && "arch-round")}>
-        <Image
-          src={project.image.src}
-          alt={project.image.alt}
-          fill
-          sizes={index === 4 ? "100vw" : "(min-width: 1024px) 55vw, 100vw"}
-          className="object-cover transition-transform duration-[1.6s] ease-lux group-hover:scale-105"
-        />
+      <Reveal className={cn("relative overflow-hidden bg-sand", l.ratio, l.arch && "arch-round")}>
+        <div className="pj-img absolute inset-0">
+          <Image
+            src={project.image.src}
+            alt={project.image.alt}
+            fill
+            sizes={index === 4 ? "100vw" : "(min-width: 1024px) 55vw, 100vw"}
+            className="object-cover transition-transform duration-[1.6s] ease-lux group-hover:scale-105"
+          />
+        </div>
         <span className="absolute top-5 left-5 bg-ivory/90 px-3 py-1.5 text-[10px] font-medium tracking-brand text-emerald uppercase backdrop-blur">
           {project.typology}
         </span>
@@ -50,7 +53,7 @@ function Card({ project, index }: { project: Project; index: number }) {
   return (
     <FadeUp className={l.col}>
       {project.slug ? (
-        <Link href={`/residences/${project.slug}`} className="group block">
+        <Link href={`/residences/${project.slug}`} data-cursor className="group block">
           {body}
         </Link>
       ) : (
@@ -72,11 +75,11 @@ export function Projects() {
             </Button>
           </FadeUp>
         </div>
-        <div className="mt-16 grid gap-x-10 gap-y-16 lg:grid-cols-12">
+        <ProjectsMotion className="mt-16 grid gap-x-10 gap-y-16 lg:grid-cols-12">
           {projects.map((p, i) => (
             <Card key={p.name} project={p} index={i} />
           ))}
-        </div>
+        </ProjectsMotion>
       </div>
     </section>
   );

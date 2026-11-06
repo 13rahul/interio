@@ -83,12 +83,19 @@ export function Materials() {
               <motion.div
                 key={m.name}
                 className="absolute inset-0"
-                initial={{ clipPath: "inset(0 0 0 100%)" }}
-                animate={{ clipPath: "inset(0 0 0 0%)" }}
-                exit={{ opacity: 1 }}
-                transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+                initial={{ clipPath: "circle(0% at 50% 50%)" }}
+                animate={{ clipPath: "circle(75% at 50% 50%)" }}
+                exit={{ opacity: 1, transition: { duration: 1.1 } }}
+                transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1] }}
               >
-                <Image src={m.image.src} alt={m.image.alt} fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+                <motion.div
+                  className="absolute inset-0"
+                  initial={{ scale: 1.3, rotate: -4 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Image src={m.image.src} alt={m.image.alt} fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+                </motion.div>
               </motion.div>
             </AnimatePresence>
             <div className="absolute inset-x-0 bottom-0 flex flex-wrap gap-2 bg-gradient-to-t from-pine/80 to-transparent p-6 pt-20">

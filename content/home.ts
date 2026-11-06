@@ -17,6 +17,99 @@ export const hero = {
   },
 } as const;
 
+export type StoryChapter = {
+  label: string;
+  title: string;
+  accent: string;
+  arabic: string;
+  body: string;
+  image: Img;
+};
+
+// Chapter 1 is the photo inside the hero arch; the window opens onto it.
+export const story: StoryChapter[] = [
+  {
+    label: "Step inside",
+    title: "Every home opens",
+    accent: "like a door.",
+    arabic: "تفضّل بالدخول",
+    body: "Light kept low, linen soft underhand, brass catching the evening. This is where an Opulent Living home begins.",
+    image: hero.image,
+  },
+  {
+    label: "The city",
+    title: "Dubai wakes",
+    accent: "in gold.",
+    arabic: "دبي تستيقظ ذهباً",
+    body: "Desert light, glass towers, and a horizon that changes by the hour. We design rooms that answer to it.",
+    image: {
+      src: "/images/story-dawn.jpg",
+      ...wide,
+      alt: "First light over the desert, with the Dubai skyline and the Burj Khalifa on the horizon.",
+    },
+  },
+  {
+    label: "The heritage",
+    title: "Shade came",
+    accent: "first.",
+    arabic: "الظل أولاً",
+    body: "Before the towers, Dubai built wind towers, courtyards, and deep doorways. Every plan we draw still starts there.",
+    image: {
+      src: "/images/story-heritage.jpg",
+      ...wide,
+      alt: "A lane in Al Fahidi at golden hour, with coral-stone houses, wind towers, and an abra on Dubai Creek.",
+    },
+  },
+  {
+    label: "The craft",
+    title: "Made by",
+    accent: "hand.",
+    arabic: "صُنع باليد",
+    body: "Mashrabiya screens are drawn in our studio, then carved, inlaid, and fitted by our own craftsmen in Al Quoz.",
+    image: {
+      src: "/images/story-craft.jpg",
+      ...wide,
+      alt: "A craftsman's hands carving a geometric oak mashrabiya screen with a thin brass inlay.",
+    },
+  },
+  {
+    label: "The welcome",
+    title: "Every house begins in the",
+    accent: "majlis.",
+    arabic: "كل بيت يبدأ بالمجلس",
+    body: "Gahwa poured, dates on walnut, the light kept low. We design the room around the welcome.",
+    image: {
+      src: "/images/story-majlis.jpg",
+      ...wide,
+      alt: "An Emirati host in a kandura pouring Arabic coffee from a brass dallah for a guest in a travertine majlis.",
+    },
+  },
+  {
+    label: "The family",
+    title: "Rooms for a",
+    accent: "Friday.",
+    arabic: "غرف ليوم الجمعة",
+    body: "Courtyards cool enough to cross at noon, and doorways that glow when everyone comes home.",
+    image: {
+      src: "/images/story-family.jpg",
+      ...wide,
+      alt: "A mother in an abaya, seen from behind, walking with her child toward a glowing arched doorway in a villa courtyard.",
+    },
+  },
+  {
+    label: "Your home",
+    title: "Now, let's design",
+    accent: "yours.",
+    arabic: "والآن، نصمّم بيتك",
+    body: "Designed, approved, built, and styled by one Dubai studio, at a price fixed before we begin.",
+    image: {
+      src: "/images/close.jpg",
+      ...wide,
+      alt: "A villa colonnade of limestone arches at night, lit by a single brass lantern.",
+    },
+  },
+];
+
 // Placeholder figures, to replace with the client's real numbers.
 export const stats = [
   { value: "140+", label: "Projects delivered" },

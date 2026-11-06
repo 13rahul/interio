@@ -3,6 +3,7 @@ import { Amiri, Aref_Ruqaa, Cormorant_Garamond, Jost } from "next/font/google";
 import { MotionConfig } from "framer-motion";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
+import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { site } from "@/content/site";
 import "./globals.css";
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           >
             Skip to content
           </a>
+          <SmoothScroll />
           <Header />
           <main id="content">{children}</main>
           <Footer />

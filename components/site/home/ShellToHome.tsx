@@ -1,17 +1,46 @@
 "use client";
 
 import Image from "next/image";
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { transformation } from "@/content/home";
+import { gsap, media, useGSAP } from "@/lib/gsap";
 import { FadeUp } from "../Reveal";
 import { SectionHeading } from "./parts";
 
 export function ShellToHome() {
   const [value, setValue] = useState(50);
   const id = useId();
+  const ref = useRef<HTMLElement>(null);
+  const touched = useRef(false);
+  const sweep = useRef<gsap.core.Tween | null>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(media.motion, () => {
+        const proxy = { v: 92 };
+        sweep.current = gsap.to(proxy, {
+          v: 12,
+          ease: "none",
+          scrollTrigger: { trigger: ".sh-figure", start: "top 80%", end: "bottom 35%", scrub: 0.6 },
+          onUpdate: () => {
+            if (!touched.current) setValue(Math.round(proxy.v));
+          },
+        });
+      });
+    },
+    { scope: ref },
+  );
+
+  const takeOver = () => {
+    if (touched.current) return;
+    touched.current = true;
+    sweep.current?.scrollTrigger?.kill();
+    sweep.current?.kill();
+  };
 
   return (
-    <section className="theme-linen py-24 lg:py-32" id="transformation">
+    <section ref={ref} className="theme-linen py-24 lg:py-32" id="transformation">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading eyebrow="Turnkey delivery" title="From shell" accent="to home." />
@@ -21,7 +50,7 @@ export function ShellToHome() {
           </FadeUp>
         </div>
 
-        <figure className="mt-12">
+        <figure className="sh-figure mt-12">
           <div className="relative aspect-video w-full overflow-hidden select-none">
             <Image
               src={transformation.after.src}
@@ -63,7 +92,12 @@ export function ShellToHome() {
               min={0}
               max={100}
               value={value}
-              onChange={(event) => setValue(Number(event.target.value))}
+              onPointerDown={takeOver}
+              onKeyDown={takeOver}
+              onChange={(event) => {
+                takeOver();
+                setValue(Number(event.target.value));
+              }}
               aria-valuetext={`${value}% shell shown`}
               className="compare-range absolute inset-0 h-full w-full"
             />

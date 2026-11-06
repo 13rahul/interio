@@ -4,7 +4,7 @@ import { animate, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { usePrefersReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
-import { FadeUp } from "../Reveal";
+import { gsap, media, SplitText, useGSAP } from "@/lib/gsap";
 
 export function SectionHeading({
   eyebrow,
@@ -23,20 +23,51 @@ export function SectionHeading({
   className?: string;
   children?: React.ReactNode;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const el = ref.current;
+      if (!el) return;
+      const mm = gsap.matchMedia();
+      mm.add(media.motion, () => {
+        const q = gsap.utils.selector(el);
+        const trigger = { trigger: el, start: "top 85%", once: true };
+        gsap.from(q(".sh-eyebrow"), { opacity: 0, x: align === "center" ? 0 : -24, duration: 0.9, ease: "power3.out", scrollTrigger: trigger });
+        gsap.from(q(".sh-eyebrow-line"), { scale: 0, duration: 0.9, ease: "power3.out", scrollTrigger: trigger });
+        gsap.from(q(".sh-rest"), { opacity: 0, y: 24, duration: 1, delay: 0.35, ease: "power3.out", scrollTrigger: trigger });
+        SplitText.create(q("h2"), {
+          type: "lines",
+          mask: "lines",
+          autoSplit: true,
+          onSplit: (self) =>
+            gsap.from(self.lines, {
+              yPercent: 110,
+              stagger: 0.1,
+              duration: 1.1,
+              ease: "power4.out",
+              scrollTrigger: trigger,
+            }),
+        });
+      });
+    },
+    { scope: ref },
+  );
+
   return (
-    <FadeUp className={cn(align === "center" && "mx-auto text-center", className)}>
+    <div ref={ref} className={cn(align === "center" && "mx-auto text-center", className)}>
       <p
         className={cn(
-          "flex items-center gap-3 text-xs font-medium tracking-brand text-gold uppercase",
+          "sh-eyebrow flex items-center gap-3 text-xs font-medium tracking-brand text-gold uppercase",
           align === "center" && "justify-center",
         )}
       >
-        <span className="size-1.5 rotate-45 bg-brass" aria-hidden="true" />
+        <span className="sh-eyebrow-line size-1.5 rotate-45 bg-brass" aria-hidden="true" />
         {eyebrow}
         {arabic ? (
           <>
             <span aria-hidden="true">·</span>
-            <span lang="ar" dir="rtl" className="font-arabic text-sm font-bold tracking-normal normal-case">
+            <span lang="ar" dir="rtl" className="font-arabic text-sm font-bold tracking-normal whitespace-nowrap normal-case">
               {arabic}
             </span>
           </>
@@ -45,8 +76,8 @@ export function SectionHeading({
       <h2 className="mt-5 font-display text-4xl leading-[1.02] font-light text-beige sm:text-5xl lg:text-6xl">
         {title} {accent ? <em className="text-gold">{accent}</em> : null}
       </h2>
-      {children}
-    </FadeUp>
+      {children ? <div className="sh-rest">{children}</div> : null}
+    </div>
   );
 }
 

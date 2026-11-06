@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Lattice } from "@/components/brand/Lattice";
 import { sectors } from "@/content/home";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 import { FadeUp } from "../Reveal";
 import { Arrow, SectionHeading } from "./parts";
@@ -13,9 +14,27 @@ import { Arrow, SectionHeading } from "./parts";
 export function Services() {
   const [active, setActive] = useState(0);
   const current = sectors[active];
+  const ref = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        gsap.utils.toArray<HTMLElement>(".sv-row", ref.current).forEach((row, i) => {
+          ScrollTrigger.create({
+            trigger: row,
+            start: "top 55%",
+            end: "bottom 55%",
+            onToggle: (self) => self.isActive && setActive(i),
+          });
+        });
+      });
+    },
+    { scope: ref },
+  );
 
   return (
-    <section className="theme-night relative overflow-hidden py-24 lg:py-36" id="services">
+    <section ref={ref} className="theme-night relative overflow-hidden py-24 lg:py-36" id="services">
       <Lattice className="opacity-[0.06]" size={80} />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-8">
@@ -33,7 +52,7 @@ export function Services() {
             {sectors.map((s, i) => (
               <motion.li
                 key={s.slug}
-                className="border-t border-graphite last:border-b"
+                className="sv-row border-t border-graphite last:border-b"
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
@@ -85,16 +104,23 @@ export function Services() {
           <div className="hidden lg:col-span-5 lg:block">
             <div className="sticky top-28">
               <div className="arch-ogee relative aspect-[3/4] overflow-hidden bg-pine">
-                <AnimatePresence mode="popLayout" initial={false}>
+                <AnimatePresence initial={false}>
                   <motion.div
                     key={current.slug}
                     className="absolute inset-0"
-                    initial={{ opacity: 0, scale: 1.12 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                    initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+                    animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                    exit={{ opacity: 1, transition: { duration: 1 } }}
+                    transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
                   >
-                    <Image src={current.image.src} alt={current.image.alt} fill sizes="36vw" className="object-cover" />
+                    <motion.div
+                      className="absolute inset-0"
+                      initial={{ scale: 1.25 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <Image src={current.image.src} alt={current.image.alt} fill sizes="36vw" className="object-cover" />
+                    </motion.div>
                   </motion.div>
                 </AnimatePresence>
                 <div className="scrim-bottom absolute inset-0" aria-hidden="true" />
