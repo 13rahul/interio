@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+/*
+ * Token roles: charcoal = ground, graphite = hairline and raised surface,
+ * ash = secondary text, beige = primary text, gold = accent.
+ * The defaults are the night values; .theme-* classes remap them per section.
+ */
+@theme {
+  --color-charcoal: #1c1814;
+  --color-graphite: #2e2822;
+  --color-ash: #bdb3a6;
+  --color-beige: #ecdfcc;
+  --color-gold: #c9a45e;
+  --color-brass: #c9a45e;
+  --color-brass-light: #dcbf86;
+  --color-ink: #2b231b;
+}
+
+@theme inline {
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --tracking-brand: 0.28em;
+}
+
+.theme-linen,
+.theme-sand,
+.theme-stone {
+  --color-graphite: #dccdb6;
+  --color-ash: #5e5246;
+  --color-beige: #2b231b;
+  --color-gold: #7a5c24;
+  color-scheme: light;
+}
+
+.theme-linen {
+  --color-charcoal: #f6efe4;
+}
+
+.theme-sand {
+  --color-charcoal: #ede2d0;
+}
+
+.theme-stone {
+  --color-charcoal: #e3d4bd;
+  --color-graphite: #cfbd9f;
+  --color-ash: #574b3f;
+  --color-gold: #6b501e;
+}
+
+.theme-night {
+  --color-charcoal: #1c1814;
+  --color-graphite: #2e2822;
+  --color-ash: #bdb3a6;
+  --color-beige: #ecdfcc;
+  --color-gold: #c9a45e;
+  color-scheme: dark;
+}
+
+@layer base {
+  .theme-linen,
+  .theme-sand,
+  .theme-stone,
+  .theme-night {
+    background-color: var(--color-charcoal);
+    color: var(--color-beige);
+  }
+
+  /* Jost 300 thins out on light grounds; it only reads well light-on-dark. */
+  .theme-linen,
+  .theme-sand,
+  .theme-stone {
+    font-weight: 400;
+  }
+
+  .theme-night {
+    font-weight: 300;
+  }
+}
+
+html {
+  background: #f6efe4;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: clip;
+  background: var(--color-charcoal);
+  color: var(--color-beige);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+select {
+  color-scheme: inherit;
+}
+
+.scrim-left {
+  background: linear-gradient(
+    100deg,
+    rgb(38 28 18 / 0.86) 0%,
+    rgb(38 28 18 / 0.5) 38%,
+    rgb(38 28 18 / 0.04) 70%,
+    rgb(38 28 18 / 0.18) 100%
+  );
+}
+
+.scrim-bottom {
+  background: linear-gradient(
+    180deg,
+    rgb(38 28 18 / 0) 40%,
+    rgb(38 28 18 / 0.45) 68%,
+    rgb(38 28 18 / 0.9) 100%
+  );
+}
+
+.scrim-center {
+  background: radial-gradient(
+    ellipse at center,
+    rgb(38 28 18 / 0.72) 0%,
+    rgb(38 28 18 / 0.45) 55%,
+    rgb(38 28 18 / 0.65) 100%
+  );
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.rail-pin {
+  display: none;
+}
+
+.rail-swipe {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .rail-pin {
+    display: block;
+  }
+
+  .rail-swipe {
+    display: none;
+  }
+}
+
+.story-stack {
+  display: none;
+}
+
+@keyframes drift {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.06) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+.animate-drift {
+  animation: drift 16s ease-in-out infinite alternate;
+}
+
+@keyframes cue {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(200%);
+  }
+}
+
+.animate-cue {
+  animation: cue 1.8s ease-in-out infinite;
+}
+
+input[type="range"].compare-range {
+  appearance: none;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+input[type="range"].compare-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 44px;
+  height: 100%;
+  min-height: 44px;
+  background: transparent;
+}
+
+input[type="range"].compare-range::-moz-range-thumb {
+  width: 44px;
+  height: 100%;
+  border: 0;
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .rail-pin {
+    display: none;
+  }
+
+  .rail-swipe {
+    display: block;
+  }
+
+  .story-film {
+    display: none;
+  }
+
+  .story-stack {
+    display: block;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
