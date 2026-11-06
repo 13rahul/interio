@@ -136,7 +136,7 @@ function Caption({
             transition={{ duration: 1, delay: 1.6 }}
           >
             <span className="relative h-8 w-px overflow-hidden bg-beige/20" aria-hidden="true">
-              <span className="animate-cue absolute inset-x-0 top-0 h-1/2 bg-brass" />
+              <span className="animate-cue absolute inset-x-0 top-0 h-1/2 bg-aqua" />
             </span>
             Scroll to begin the story
           </motion.p>
@@ -210,7 +210,7 @@ function StoryFilm() {
                 </a>
               </div>
               <div className="h-px w-full bg-beige/20" aria-hidden="true">
-                <motion.div style={{ scaleX: scrollYProgress }} className="h-px origin-left bg-brass" />
+                <motion.div style={{ scaleX: scrollYProgress }} className="h-px origin-left bg-aqua" />
               </div>
             </div>
             <motion.div

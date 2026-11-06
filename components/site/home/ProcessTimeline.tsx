@@ -26,7 +26,7 @@ export function ProcessTimeline() {
 
         <div className="relative mt-16">
           <div className="absolute top-[7px] right-0 left-0 hidden h-px bg-graphite lg:block" aria-hidden="true">
-            <motion.div style={{ scaleX: scrollYProgress }} className="h-px origin-left bg-brass" />
+            <motion.div style={{ scaleX: scrollYProgress }} className="h-px origin-left bg-aqua" />
           </div>
           <ol className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
             {process.map((step, i) => (

@@ -6,14 +6,15 @@
  * The defaults are the night values; .theme-* classes remap them per section.
  */
 @theme {
-  --color-charcoal: #1c1814;
-  --color-graphite: #2e2822;
-  --color-ash: #bdb3a6;
-  --color-beige: #ecdfcc;
-  --color-gold: #c9a45e;
-  --color-brass: #c9a45e;
-  --color-brass-light: #dcbf86;
-  --color-ink: #2b231b;
+  --color-charcoal: #0f4d3f;
+  --color-graphite: #1f6455;
+  --color-ash: #cfe3da;
+  --color-beige: #fbf7f0;
+  --color-gold: #e8cb7a;
+  --color-brass: #d4af37;
+  --color-brass-light: #e8cb7a;
+  --color-ink: #0b2e27;
+  --color-aqua: #3ec6b4;
 }
 
 @theme inline {
@@ -25,34 +26,32 @@
 .theme-linen,
 .theme-sand,
 .theme-stone {
-  --color-graphite: #dccdb6;
-  --color-ash: #5e5246;
-  --color-beige: #2b231b;
-  --color-gold: #7a5c24;
+  --color-graphite: #e3d3b8;
+  --color-ash: #3f5a52;
+  --color-beige: #0b2e27;
+  --color-gold: #0e6b5f;
   color-scheme: light;
 }
 
 .theme-linen {
-  --color-charcoal: #f6efe4;
+  --color-charcoal: #fbf7f0;
 }
 
 .theme-sand {
-  --color-charcoal: #ede2d0;
+  --color-charcoal: #f2e6d3;
 }
 
 .theme-stone {
-  --color-charcoal: #e3d4bd;
-  --color-graphite: #cfbd9f;
-  --color-ash: #574b3f;
-  --color-gold: #6b501e;
+  --color-charcoal: #e3f6f1;
+  --color-graphite: #bfe0d6;
 }
 
 .theme-night {
-  --color-charcoal: #1c1814;
-  --color-graphite: #2e2822;
-  --color-ash: #bdb3a6;
-  --color-beige: #ecdfcc;
-  --color-gold: #c9a45e;
+  --color-charcoal: #0f4d3f;
+  --color-graphite: #1f6455;
+  --color-ash: #cfe3da;
+  --color-beige: #fbf7f0;
+  --color-gold: #e8cb7a;
   color-scheme: dark;
 }
 
@@ -78,7 +77,7 @@
 }
 
 html {
-  background: #f6efe4;
+  background: #fbf7f0;
   scroll-behavior: smooth;
 }
 
@@ -112,28 +111,28 @@ select {
 .scrim-left {
   background: linear-gradient(
     100deg,
-    rgb(38 28 18 / 0.86) 0%,
-    rgb(38 28 18 / 0.5) 38%,
-    rgb(38 28 18 / 0.04) 70%,
-    rgb(38 28 18 / 0.18) 100%
+    rgb(11 46 39 / 0.86) 0%,
+    rgb(11 46 39 / 0.5) 38%,
+    rgb(11 46 39 / 0.04) 70%,
+    rgb(11 46 39 / 0.18) 100%
   );
 }
 
 .scrim-bottom {
   background: linear-gradient(
     180deg,
-    rgb(38 28 18 / 0) 40%,
-    rgb(38 28 18 / 0.45) 68%,
-    rgb(38 28 18 / 0.9) 100%
+    rgb(11 46 39 / 0) 40%,
+    rgb(11 46 39 / 0.45) 68%,
+    rgb(11 46 39 / 0.9) 100%
   );
 }
 
 .scrim-center {
   background: radial-gradient(
     ellipse at center,
-    rgb(38 28 18 / 0.72) 0%,
-    rgb(38 28 18 / 0.45) 55%,
-    rgb(38 28 18 / 0.65) 100%
+    rgb(11 46 39 / 0.72) 0%,
+    rgb(11 46 39 / 0.45) 55%,
+    rgb(11 46 39 / 0.65) 100%
   );
 }
 

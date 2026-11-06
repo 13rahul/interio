@@ -34,7 +34,7 @@ export function WhatsAppButton() {
       tabIndex={visible ? undefined : -1}
       aria-hidden={visible ? undefined : true}
       className={cn(
-        "fixed right-5 bottom-5 z-30 grid size-14 place-items-center rounded-full bg-brass text-ink shadow-lg shadow-black/20 transition-[opacity,transform] duration-500 hover:bg-brass-light",
+        "fixed right-5 bottom-5 z-30 grid size-14 place-items-center rounded-full bg-aqua text-ink shadow-lg shadow-black/20 transition-[opacity,transform] duration-500 hover:bg-brass",
         visible ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0",
       )}
     >

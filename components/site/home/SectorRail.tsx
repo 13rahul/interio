@@ -76,7 +76,7 @@ function PinnedRail() {
           </span>
           <div className="h-px flex-1 bg-graphite" aria-hidden="true">
             <motion.div
-              className="h-px origin-left bg-brass"
+              className="h-px origin-left bg-aqua"
               animate={{ scaleX: stops.length > 1 ? active / (stops.length - 1) : 1 }}
               transition={{ type: "spring", stiffness: 140, damping: 26 }}
             />
