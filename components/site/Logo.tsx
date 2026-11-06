@@ -32,12 +32,32 @@ export function Logo({
   }
 
   return (
-    <span className={cn("inline-flex min-h-11 items-center gap-3 leading-none", className)}>
-      <GateMark tone={inverse ? "foil" : "gold"} className="w-8" medallion={medallion} monogram={monogram} />
+    <span className={cn("group/logo inline-flex min-h-11 items-center gap-3 leading-none sm:gap-4", className)}>
+      <span className="relative grid place-items-center">
+        <span
+          className="absolute inset-0 -z-10 scale-75 rounded-full bg-champagne/40 opacity-0 blur-md transition-all duration-700 group-hover/logo:scale-125 group-hover/logo:opacity-100"
+          aria-hidden="true"
+        />
+        <GateMark
+          tone={inverse ? "foil" : "gold"}
+          className="w-8 transition-transform duration-700 ease-lux group-hover/logo:-translate-y-0.5 sm:w-10"
+          medallion={medallion}
+          monogram={monogram}
+        />
+      </span>
+      <span className="h-9 w-px bg-gradient-to-b from-transparent via-brass to-transparent sm:h-10" aria-hidden="true" />
       <span className="flex flex-col">
-        <span className="font-display text-lg font-medium tracking-[0.3em] text-beige uppercase">Opulent Living</span>
-        <span lang="ar" dir="rtl" className="mt-1 self-start font-arabic text-sm font-bold text-brass">
-          {arabicName}
+        <span className="font-display text-[15px] font-medium tracking-[0.28em] whitespace-nowrap text-beige uppercase sm:text-xl sm:tracking-[0.3em]">
+          Opulent Living
+        </span>
+        <span className="mt-1.5 flex items-center gap-2">
+          <span lang="ar" dir="rtl" className="font-arabic text-[13px] font-bold text-brass sm:text-sm">
+            {arabicName}
+          </span>
+          <span className="hidden size-1 rotate-45 bg-brass sm:block" aria-hidden="true" />
+          <span className="hidden text-[9px] font-medium tracking-[0.35em] whitespace-nowrap text-ash uppercase sm:block">
+            Design · Dubai
+          </span>
         </span>
       </span>
     </span>

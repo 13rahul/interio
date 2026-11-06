@@ -32,7 +32,7 @@ export default async function ResidencePage({ params }: Props) {
 
   return (
     <article>
-      <header className="theme-sand relative overflow-hidden border-b border-graphite pt-28 pb-16 lg:pt-32 lg:pb-20">
+      <header className="theme-sand relative overflow-hidden border-b border-graphite pt-24 pb-16 lg:pt-40 lg:pb-20">
         <div className="absolute inset-y-0 left-0 w-1/2" aria-hidden="true">
           <Lattice className="opacity-[0.1] [mask-image:linear-gradient(to_right,black,transparent)]" />
         </div>

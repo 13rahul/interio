@@ -15,7 +15,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <header className="theme-sand relative overflow-hidden border-b border-graphite pt-36 pb-20">
+    <header className="theme-sand relative overflow-hidden border-b border-graphite pt-32 pb-20 lg:pt-44">
       <div className="absolute inset-y-0 right-0 w-2/3" aria-hidden="true">
         <Lattice className="opacity-[0.12] [mask-image:linear-gradient(to_left,black,transparent)]" />
       </div>

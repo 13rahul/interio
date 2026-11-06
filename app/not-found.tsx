@@ -4,7 +4,7 @@ import { Container } from "@/components/site/Container";
 
 export default function NotFound() {
   return (
-    <section className="pt-32 pb-24">
+    <section className="pt-32 pb-24 lg:pt-44">
       <Container>
         <p className="text-xs tracking-brand text-ash uppercase">404</p>
         <h1 className="mt-6 font-display text-5xl text-beige md:text-7xl">This room is not on the plan.</h1>
