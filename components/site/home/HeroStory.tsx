@@ -81,21 +81,21 @@ function Slide({ chapter, index }: { chapter: (typeof story)[number]; index: num
         {pad(index)}
       </span>
 
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pt-28 pb-28 sm:px-10 lg:pb-32">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-20 pb-24 sm:px-10 lg:pb-28">
         <div className="max-w-2xl text-ivory">
           <p className="hs-fade flex items-center gap-3 text-xs font-medium tracking-brand text-champagne uppercase">
             <span className="h-px w-10 bg-champagne" aria-hidden="true" />
             {pad(index)} · {chapter.label}
           </p>
-          <h2 className="hs-title mt-5 font-display text-[2.6rem] leading-[1] font-light sm:text-6xl lg:text-7xl">
+          <h2 className="hs-title mt-[min(1.25rem,2.5vh)] font-display text-[clamp(2.1rem,min(7.5vw,8.5vh),4.5rem)] leading-[1.04] font-light">
             {chapter.title} <em className="text-foil">{chapter.accent}</em>
           </h2>
-          <p lang="ar" dir="rtl" className="hs-fade text-foil mt-4 w-fit font-ruqaa text-2xl leading-[1.7] sm:text-3xl">
+          <p lang="ar" dir="rtl" className="hs-fade text-foil mt-[min(1rem,2vh)] w-fit font-ruqaa text-[clamp(1.35rem,min(5vw,4.2vh),1.9rem)] leading-[1.7]">
             {chapter.arabic}
           </p>
-          <p className="hs-fade mt-3 max-w-md text-[15px] leading-relaxed text-ivory/85 sm:text-base">{chapter.body}</p>
+          <p className="hs-fade mt-2 max-w-md text-[15px] leading-relaxed text-ivory/85 sm:text-base [@media(max-height:560px)]:hidden">{chapter.body}</p>
           {last ? (
-            <div className="hs-fade mt-8 flex flex-wrap gap-3">
+            <div className="hs-fade mt-[min(2rem,3.5vh)] flex flex-wrap gap-3">
               <Button asChild>
                 <Link href="/enquiry">{consultationLabel}</Link>
               </Button>
@@ -272,14 +272,14 @@ export function HeroStory() {
               <span className="h-px w-10 bg-brass" aria-hidden="true" />
               {hero.eyebrow}
             </p>
-            <h1 className="hs-h1 mt-4 font-display text-[3.2rem] leading-[0.95] font-light text-beige sm:text-7xl lg:mt-6 xl:text-[7.25rem]">
+            <h1 className="hs-h1 mt-[min(1.5rem,2.5vh)] font-display text-[clamp(2.6rem,min(11vw,11vh),7.25rem)] leading-[0.95] font-light text-beige">
               {hero.lead} <em className="text-foil-deep block">{hero.rest}</em>
             </h1>
-            <p lang="ar" dir="rtl" className="hs-in text-foil-deep mt-2 w-fit font-ruqaa text-2xl leading-[1.7] sm:text-4xl">
+            <p lang="ar" dir="rtl" className="hs-in text-foil-deep mt-2 w-fit font-ruqaa text-[clamp(1.4rem,min(6vw,4.5vh),2.25rem)] leading-[1.7]">
               {hero.arabic}
             </p>
-            <p className="hs-in mt-3 hidden max-w-lg text-base leading-relaxed text-ash sm:block sm:text-lg">{hero.sub}</p>
-            <div className="hs-in mt-5 flex flex-wrap items-center gap-3 lg:mt-8">
+            <p className="hs-in mt-3 hidden max-w-lg text-base leading-relaxed text-ash sm:block sm:text-lg [@media(max-height:640px)]:hidden">{hero.sub}</p>
+            <div className="hs-in mt-[min(2rem,3.5vh)] flex flex-wrap items-center gap-3">
               <Button asChild>
                 <Link href="/enquiry">{consultationLabel}</Link>
               </Button>
