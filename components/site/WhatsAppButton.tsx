@@ -15,9 +15,8 @@ export function WhatsAppButton() {
       setVisible(true);
       return;
     }
-    // The story hero already carries its own consultation button in this corner.
-    const heroEnd = document.getElementById("after-story");
-    const onScroll = () => setVisible(heroEnd ? window.scrollY > heroEnd.offsetTop - window.innerHeight : true);
+    // Hidden over the hero, which already has its own consultation calls to action.
+    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.7);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

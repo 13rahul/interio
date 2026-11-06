@@ -4,26 +4,22 @@ import Image from "next/image";
 import { useId, useState } from "react";
 import { transformation } from "@/content/home";
 import { FadeUp } from "../Reveal";
+import { SectionHeading } from "./parts";
 
 export function ShellToHome() {
   const [value, setValue] = useState(50);
   const id = useId();
 
   return (
-    <section className="border-b border-graphite py-24 lg:py-32" id="transformation">
+    <section className="theme-linen py-24 lg:py-32" id="transformation">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <FadeUp className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="text-xs font-medium tracking-brand text-ash uppercase">Turnkey delivery</p>
-            <h2 className="mt-4 font-display text-5xl leading-none font-light text-beige lg:text-7xl">
-              From <em>shell</em> to home.
-            </h2>
-          </div>
-          <p className="max-w-sm text-[15px] leading-relaxed text-ash">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading eyebrow="Turnkey delivery" title="From shell" accent="to home." />
+          <FadeUp className="max-w-sm text-[15px] leading-relaxed text-ash">
             Drag the line. One studio handles the drawings, the joinery, and the site, so the finished room looks
             like the first sketch.
-          </p>
-        </FadeUp>
+          </FadeUp>
+        </div>
 
         <figure className="mt-12">
           <div className="relative aspect-video w-full overflow-hidden select-none">
@@ -54,7 +50,7 @@ export function ShellToHome() {
               style={{ left: `${value}%` }}
               aria-hidden="true"
             >
-              <span className="absolute top-1/2 left-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brass bg-charcoal/80 text-gold">
+              <span className="absolute top-1/2 left-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brass bg-pine/80 text-champagne backdrop-blur">
                 ↔
               </span>
             </div>

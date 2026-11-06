@@ -1,27 +1,35 @@
-import { ClientVoice } from "@/components/site/home/ClientVoice";
-import { ConsultationClose } from "@/components/site/home/ConsultationClose";
-import { Hero } from "@/components/site/home/Hero";
-import { Manifesto } from "@/components/site/home/Manifesto";
-import { MaterialHotspots } from "@/components/site/home/MaterialHotspots";
-import { ProcessTimeline } from "@/components/site/home/ProcessTimeline";
-import { ProofStrip } from "@/components/site/home/ProofStrip";
-import { SectorRail } from "@/components/site/home/SectorRail";
-import { SelectedProjects } from "@/components/site/home/SelectedProjects";
+import { Closing } from "@/components/site/home/Closing";
+import { DoorsIntro } from "@/components/site/home/DoorsIntro";
+import { Faq } from "@/components/site/home/Faq";
+import { Gallery } from "@/components/site/home/Gallery";
+import { HeroArch } from "@/components/site/home/HeroArch";
+import { Journey } from "@/components/site/home/Journey";
+import { Marquee } from "@/components/site/home/Marquee";
+import { Materials } from "@/components/site/home/Materials";
+import { Packages } from "@/components/site/home/Packages";
+import { Projects } from "@/components/site/home/Projects";
+import { Services } from "@/components/site/home/Services";
 import { ShellToHome } from "@/components/site/home/ShellToHome";
+import { Voices } from "@/components/site/home/Voices";
+import { Welcome } from "@/components/site/home/Welcome";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <ProofStrip />
-      <Manifesto />
-      <SectorRail />
+      <DoorsIntro />
+      <HeroArch />
+      <Marquee />
+      <Welcome />
+      <Services />
+      <Projects />
       <ShellToHome />
-      <SelectedProjects />
-      <MaterialHotspots />
-      <ProcessTimeline />
-      <ClientVoice />
-      <ConsultationClose />
+      <Packages />
+      <Journey />
+      <Materials />
+      <Voices />
+      <Gallery />
+      <Faq />
+      <Closing />
     </>
   );
 }

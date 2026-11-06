@@ -1,24 +1,40 @@
 @import "tailwindcss";
 
 /*
- * Token roles: charcoal = ground, graphite = hairline and raised surface,
- * ash = secondary text, beige = primary text, gold = accent.
- * The defaults are the night values; .theme-* classes remap them per section.
+ * Brand palette (brand book, page 11): Emerald Estate, Deep Pine, Dallah Gold,
+ * Champagne, Desert Sand, Pearl Ivory.
+ *
+ * Role tokens: charcoal = ground, graphite = hairline, ash = secondary text,
+ * beige = primary text, gold = accent text, brass = gold fills.
+ * The defaults are the light (ivory) values; .theme-* classes remap them per section.
  */
 @theme {
-  --color-charcoal: #0f4d3f;
-  --color-graphite: #1f6455;
-  --color-ash: #cfe3da;
-  --color-beige: #fbf7f0;
-  --color-gold: #e8cb7a;
-  --color-brass: #d4af37;
-  --color-brass-light: #e8cb7a;
+  --color-emerald: #0f4d3f;
+  --color-emerald-soft: #1a5f4f;
+  --color-pine: #0b2e27;
+  --color-dallah: #c9a23f;
+  --color-champagne: #e8cb7a;
+  --color-sand: #eadfc8;
+  --color-pearl: #f4ecdd;
+  --color-ivory: #fbf7f0;
+
+  --color-charcoal: #fbf7f0;
+  --color-graphite: #e3d3b8;
+  --color-ash: #4c5f57;
+  --color-beige: #0b2e27;
+  --color-gold: #8a6a1f;
+  --color-brass: #c9a23f;
+  --color-brass-light: #e0be62;
   --color-ink: #0b2e27;
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
   --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-arabic: var(--font-amiri), "Times New Roman", serif;
+  --font-ruqaa: var(--font-ruqaa), var(--font-amiri), serif;
   --tracking-brand: 0.28em;
 }
 
@@ -26,9 +42,9 @@
 .theme-sand,
 .theme-stone {
   --color-graphite: #e3d3b8;
-  --color-ash: #3f5a52;
+  --color-ash: #4c5f57;
   --color-beige: #0b2e27;
-  --color-gold: #17533f;
+  --color-gold: #8a6a1f;
   color-scheme: light;
 }
 
@@ -37,28 +53,35 @@
 }
 
 .theme-sand {
-  --color-charcoal: #f2e6d3;
+  --color-charcoal: #f4ecdd;
 }
 
 .theme-stone {
-  --color-charcoal: #eadfcb;
+  --color-charcoal: #eadfc8;
   --color-graphite: #d6c4a5;
 }
 
-.theme-night {
+.theme-night,
+.theme-pine {
   --color-charcoal: #0f4d3f;
-  --color-graphite: #1f6455;
-  --color-ash: #cfe3da;
+  --color-graphite: #2b6a5a;
+  --color-ash: #c9dbd2;
   --color-beige: #fbf7f0;
   --color-gold: #e8cb7a;
   color-scheme: dark;
+}
+
+.theme-pine {
+  --color-charcoal: #0b2e27;
+  --color-graphite: #1f4a40;
 }
 
 @layer base {
   .theme-linen,
   .theme-sand,
   .theme-stone,
-  .theme-night {
+  .theme-night,
+  .theme-pine {
     background-color: var(--color-charcoal);
     color: var(--color-beige);
   }
@@ -70,7 +93,8 @@
     font-weight: 400;
   }
 
-  .theme-night {
+  .theme-night,
+  .theme-pine {
     font-weight: 300;
   }
 }
@@ -85,7 +109,7 @@ body {
   background: var(--color-charcoal);
   color: var(--color-beige);
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
 }
 
@@ -95,7 +119,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-brass);
   outline-offset: 4px;
 }
 
@@ -107,32 +131,52 @@ select {
   color-scheme: inherit;
 }
 
-.scrim-left {
-  background: linear-gradient(
-    100deg,
-    rgb(11 46 39 / 0.86) 0%,
-    rgb(11 46 39 / 0.5) 38%,
-    rgb(11 46 39 / 0.04) 70%,
-    rgb(11 46 39 / 0.18) 100%
-  );
+/* Metallic gold, for display type and thin lines only, never body copy. */
+.text-foil {
+  background: linear-gradient(120deg, #9c7424 0%, #e9cf86 28%, #b88a2c 52%, #f4dd99 74%, #a77d27 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* A darker foil for ivory and sand grounds, where the pale highlight would vanish. */
+.text-foil-deep {
+  background: linear-gradient(120deg, #6f5212 0%, #b48a2e 30%, #7a5a16 55%, #c29a3c 78%, #6f5212 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-foil {
+  background: linear-gradient(120deg, #9c7424 0%, #e9cf86 28%, #b88a2c 52%, #f4dd99 74%, #a77d27 100%);
+}
+
+.animate-sheen {
+  animation: sheen 6s ease-in-out infinite alternate;
+}
+
+@keyframes sheen {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+/* The ogee arch of the Majlis Gate, as a mask for photography. */
+.arch-ogee {
+  clip-path: url(#arch-ogee);
+}
+
+.arch-round {
+  border-radius: 999px 999px 0 0;
 }
 
 .scrim-bottom {
-  background: linear-gradient(
-    180deg,
-    rgb(11 46 39 / 0) 40%,
-    rgb(11 46 39 / 0.45) 68%,
-    rgb(11 46 39 / 0.9) 100%
-  );
-}
-
-.scrim-center {
-  background: radial-gradient(
-    ellipse at center,
-    rgb(11 46 39 / 0.72) 0%,
-    rgb(11 46 39 / 0.45) 55%,
-    rgb(11 46 39 / 0.65) 100%
-  );
+  background: linear-gradient(180deg, rgb(11 46 39 / 0) 35%, rgb(11 46 39 / 0.55) 70%, rgb(11 46 39 / 0.92) 100%);
 }
 
 .no-scrollbar {
@@ -143,39 +187,17 @@ select {
   display: none;
 }
 
-.rail-pin {
-  display: none;
-}
-
-.rail-swipe {
-  display: block;
-}
-
-@media (min-width: 1024px) {
-  .rail-pin {
-    display: block;
-  }
-
-  .rail-swipe {
-    display: none;
-  }
-}
-
-.story-stack {
-  display: none;
-}
-
-@keyframes drift {
+@keyframes marquee {
   from {
-    transform: scale(1) translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.06) translate3d(-1.5%, -1%, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
-.animate-drift {
-  animation: drift 16s ease-in-out infinite alternate;
+.animate-marquee {
+  animation: marquee 38s linear infinite;
 }
 
 @keyframes cue {
@@ -189,6 +211,45 @@ select {
 
 .animate-cue {
   animation: cue 1.8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+/* If scripts never run, the opening doors still get out of the way. */
+.intro-fallback {
+  animation: intro-hide 0s linear 5s forwards;
+}
+
+html[data-intro="skip"] .intro-fallback {
+  display: none;
+}
+
+@keyframes intro-hide {
+  to {
+    visibility: hidden;
+  }
 }
 
 input[type="range"].compare-range {
@@ -215,22 +276,6 @@ input[type="range"].compare-range::-moz-range-thumb {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .rail-pin {
-    display: none;
-  }
-
-  .rail-swipe {
-    display: block;
-  }
-
-  .story-film {
-    display: none;
-  }
-
-  .story-stack {
-    display: block;
   }
 
   *,

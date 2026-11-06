@@ -6,94 +6,16 @@ const square = { width: 1024, height: 1024 };
 
 export const hero = {
   eyebrow: "Affordable luxury interiors · Dubai",
-  lead: "Luxury,",
+  lead: "Opulence,",
   rest: "within reach.",
-  sub: "Villas, apartments, hotels, and workplaces, designed and delivered turnkey by one Dubai studio, at a fixed and honest price.",
+  arabic: "الفخامة في متناول يدك",
+  sub: "Villas, apartments, majlis, and hospitality interiors, designed and delivered turnkey by one Dubai studio, at a fixed and honest price.",
   image: {
     src: "/images/hero.jpg",
     ...wide,
     alt: "A villa majlis at dusk: long linen seating, a travertine wall with a brass inlay, an oak screen, and an arched view to a lit courtyard.",
   },
-  hotspots: [
-    { label: "Oak screen", x: 44, y: 30 },
-    { label: "Brushed brass", x: 63, y: 46 },
-    { label: "Travertine", x: 64, y: 20 },
-  ],
 } as const;
-
-export type StoryChapter = {
-  label: string;
-  title: string;
-  accent: string;
-  body: string;
-  image: Img;
-};
-
-// Frame 0 carries the hero headline; the last frame is hero.image with the hotspots.
-export const story: StoryChapter[] = [
-  {
-    label: "Prologue · First light",
-    title: "",
-    accent: "",
-    body: "",
-    image: {
-      src: "/images/story-dawn.jpg",
-      ...wide,
-      alt: "First light over the desert, with the Dubai skyline and the Burj Khalifa on the horizon.",
-    },
-  },
-  {
-    label: "I · The city",
-    title: "Shade came",
-    accent: "first.",
-    body: "Before the towers, Dubai built wind towers, courtyards, and deep doorways. Every Opulent Living home still starts there.",
-    image: {
-      src: "/images/story-heritage.jpg",
-      ...wide,
-      alt: "A lane in Al Fahidi at golden hour, with coral-stone houses, wind towers, and an abra on Dubai Creek.",
-    },
-  },
-  {
-    label: "II · The hand",
-    title: "Made by",
-    accent: "hand.",
-    body: "Every screen is drawn in our studio, then carved, inlaid, and fitted by our own craftsmen.",
-    image: {
-      src: "/images/story-craft.jpg",
-      ...wide,
-      alt: "A craftsman's hands carving a geometric oak mashrabiya screen with a thin brass inlay.",
-    },
-  },
-  {
-    label: "III · The welcome",
-    title: "Every house begins in the",
-    accent: "majlis.",
-    body: "Gahwa poured, dates on walnut, the light kept low. We design the room around the welcome.",
-    image: {
-      src: "/images/story-majlis.jpg",
-      ...wide,
-      alt: "An Emirati host in a kandura pouring Arabic coffee from a brass dallah for a guest in a travertine majlis.",
-    },
-  },
-  {
-    label: "IV · The family",
-    title: "Rooms for a",
-    accent: "Friday.",
-    body: "Courtyards cool enough to cross at noon, and doorways that glow when everyone comes home.",
-    image: {
-      src: "/images/story-family.jpg",
-      ...wide,
-      alt: "A mother in an abaya, seen from behind, walking with her child toward a glowing arched doorway in a villa courtyard.",
-    },
-  },
-  {
-    label: "V · The room",
-    title: "This is",
-    accent: "Opulent Living.",
-    body: hero.sub,
-    image: hero.image,
-  },
-];
 
 // Placeholder figures, to replace with the client's real numbers.
 export const stats = [
@@ -110,9 +32,6 @@ export const credentials = [
   "Own joinery workshop in Al Quoz",
   "Fixed, itemised quotes",
 ] as const;
-
-export const manifesto =
-  "We design for the light at four in the afternoon, the family on a Friday, and the guest who stays late.";
 
 export const sectors = [
   {
@@ -327,6 +246,129 @@ export const testimonial = {
     alt: "A villa owner seated in her travertine and walnut living room.",
   },
 } as const;
+
+export const marquee = [
+  "Villas",
+  "Majlis",
+  "Apartments",
+  "Penthouses",
+  "Hospitality",
+  "Family offices",
+  "Bespoke joinery",
+  "Turnkey fit-out",
+] as const;
+
+export const welcome = {
+  eyebrow: "Welcome",
+  arabic: "أهلاً وسهلاً",
+  title: "A home that welcomes",
+  accent: "every guest.",
+  body: "In an Emirati home, generosity to the guest is the truest wealth. We design around that: a majlis that feels grand, family rooms that feel calm, and a budget that is written down before a single finish is chosen.",
+  founderNote:
+    "Luxury is not a price tag. It is how a room makes you feel when the coffee is poured and the family arrives.",
+  founderRole: "Founder and principal designer",
+  image: {
+    src: "/images/story-majlis.jpg",
+    ...wide,
+    alt: "An Emirati host pouring Arabic coffee from a brass dallah for a guest in a travertine majlis.",
+  },
+  inset: {
+    src: "/images/story-craft.jpg",
+    ...wide,
+    alt: "A craftsman carving a geometric oak mashrabiya screen.",
+  },
+} as const;
+
+// Placeholder packages and prices, to confirm with the client before launch.
+export const packages = [
+  {
+    name: "Essential",
+    arabic: "أساسي",
+    price: "AED 85",
+    unit: "per sq ft",
+    line: "A room or apartment refreshed, designed in four weeks.",
+    features: ["Concept and mood board", "3D visuals of every room", "Furniture and lighting plan", "Shopping list with prices"],
+    featured: false,
+  },
+  {
+    name: "Signature",
+    arabic: "التوقيع",
+    price: "AED 165",
+    unit: "per sq ft",
+    line: "Full design and fit-out for villas and apartments.",
+    features: [
+      "Everything in Essential",
+      "Bespoke joinery and majlis seating",
+      "Dubai Municipality approvals",
+      "Site team and weekly report",
+      "Styling and handover",
+    ],
+    featured: true,
+  },
+  {
+    name: "Palace",
+    arabic: "القصر",
+    price: "Bespoke",
+    unit: "fixed quote",
+    line: "Whole villas, hospitality, and family offices.",
+    features: ["Everything in Signature", "Interior architecture", "Art and antiques curation", "Aftercare for one year"],
+    featured: false,
+  },
+] as const;
+
+// Placeholder testimonials until the client supplies real ones.
+export const testimonials = [
+  {
+    quote:
+      "They listened to how we actually live — Friday lunches, the afternoon heat, the children — and the house now feels calm in a way we didn't know to ask for.",
+    name: "Mariam A.",
+    role: "Villa owner, Emirates Hills",
+  },
+  {
+    quote:
+      "Our majlis looks like a five-star hotel lounge, and the final bill matched the first quote to the dirham. Guests always ask who designed it.",
+    name: "Khalid R.",
+    role: "Villa owner, Al Barari",
+  },
+  {
+    quote:
+      "From the first sketch to the keys, one team and one phone number. The apartment was finished in ten weeks while we were abroad.",
+    name: "Noura S.",
+    role: "Apartment owner, Downtown",
+  },
+] as const;
+
+export const faqs = [
+  {
+    q: "What does affordable luxury mean at Opulent Living?",
+    a: "Rooms that look and feel like a five-star hotel, with finishes chosen for how they look and last rather than for a label. Every quote is fixed and itemised, so you know the full cost before work begins.",
+  },
+  {
+    q: "Do you handle approvals and the fit-out?",
+    a: "Yes. We prepare drawings for Dubai Municipality, DDA, and Trakhees, then deliver the fit-out with our own site team and joinery workshop under one contract.",
+  },
+  {
+    q: "How long does a project take?",
+    a: "A single room or apartment refresh takes four to ten weeks. A full villa usually takes six to twelve months from brief to handover.",
+  },
+  {
+    q: "Can you design a traditional majlis and a modern family wing in one house?",
+    a: "That is most of our work. The majlis can be grand and formal while the family rooms stay calm and practical, with one material language joining them.",
+  },
+  {
+    q: "Is the first consultation free?",
+    a: "Yes. The first meeting is at your home or our studio in Dubai Design District, with no obligation.",
+  },
+] as const;
+
+export const gallery = [
+  { src: "/images/project-family-majlis.jpg", alt: "A family majlis with long linen seating and a brass coffee set." },
+  { src: "/images/sector-villas.jpg", alt: "A double-height villa living room with a curved travertine staircase." },
+  { src: "/images/material-brass.jpg", alt: "A stone panel with a slim brushed brass inlay." },
+  { src: "/images/project-garden-liwan.jpg", alt: "A travertine bath in the shade of an oak screen." },
+  { src: "/images/sector-hospitality.jpg", alt: "A hotel lobby with a travertine desk and limestone arches." },
+  { src: "/images/project-high-room.jpg", alt: "A penthouse bedroom with linen bedding and a walnut wall." },
+] as const;
 
 export const closing = {
   title: "Begin with a private consultation.",
