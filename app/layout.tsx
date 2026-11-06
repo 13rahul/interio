@@ -20,6 +20,9 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
+// Hostinger's CDN honours s-maxage; without this, prerendered pages are cached for a year.
+export const revalidate = 60;
+
 export const viewport: Viewport = {
   themeColor: "#fbf7f0",
 };
